@@ -13,12 +13,14 @@ size_t TagCompound::ReadNextTag(const char* buffer,
     return NBTCC_READ_ERROR;
   }
 
+  PrintDebug("TagCompound::ReadNextTag offset: %zu\n", offset);
+
   TagType type = static_cast<TagType>(buffer[offset]);
-  offset += sizeof(TagType);
   if (type == TagType::kTagEnd) {
     return 0;
   }
 
+  PrintDebug(" > next type: %d\n", type);
   std::shared_ptr<BaseTag> tag;
   switch (type) {
 #define CASE(type)                                                             \

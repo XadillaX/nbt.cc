@@ -24,7 +24,10 @@ else
 	override CXXFLAGS += -O0 -g -DDEBUG
 endif
 
-all: $(OUT_DIR)/libnbtcc.a
+all: $(OUT_DIR)/libnbtcc.a $(OUT_DIR)/example
+
+$(OUT_DIR)/example: $(OUT_DIR)/libnbtcc.a example/main.cc
+	$(CXX) $(CC_FLAGS) $(CURDIR)/example/main.cc -o $(OUT_DIR)/example $(OUT_DIR)/libnbtcc.a
 
 $(OUT_DIR)/libnbtcc.a: $(OBJ_FILES)
 	$(AR) $(AR_FLAGS) $@ $(OBJ_FILES)
@@ -40,7 +43,8 @@ $(OUT_DIR)/%.o: src/%.cc $(SRC_HEADER_FILES) $(INCLUDE_FILES)
 	@echo "        \"file\": \"$<\""                    >> $@
 	@echo "    },"                              >> $@
 
-COMPDB_ENTRIES = $(addsuffix .compdb_entry, $(basename $(SRC_FILES)))
+COMPDB_ENTRIES = $(addsuffix .compdb_entry, $(basename $(SRC_FILES))) \
+		 $(addsuffix .compdb_entry, $(basename example/main.cc))
 
 compile_commands.json: $(COMPDB_ENTRIES)
 	@echo "[" > $@.tmp
@@ -57,11 +61,11 @@ clean:
 	rm -f compile_commands.json
 
 clang-format: .clang-format-stamp
-.clang-format-stamp: $(SRC_FILES) $(SRC_HEADER_FILES) $(INCLUDE_FILES)
-	$(CLANG_FORMAT) -i --style=file $(SRC_FILES) $(SRC_HEADER_FILES) $(INCLUDE_FILES)
+.clang-format-stamp: $(SRC_FILES) $(SRC_HEADER_FILES) $(INCLUDE_FILES) example/main.cc
+	$(CLANG_FORMAT) -i --style=file $(SRC_FILES) $(SRC_HEADER_FILES) $(INCLUDE_FILES) example/main.cc
 	touch .clang-format-stamp
 
 cpplint: .cpplint-stamp
-.cpplint-stamp: $(SRC_FILES) $(SRC_HEADER_FILES) $(INCLUDE_FILES)
-	$(CPPLINT_BIN) $(SRC_FILES) $(SRC_HEADER_FILES) $(INCLUDE_FILES)
+.cpplint-stamp: $(SRC_FILES) $(SRC_HEADER_FILES) $(INCLUDE_FILES) example/main.cc
+	$(CPPLINT_BIN) $(SRC_FILES) $(SRC_HEADER_FILES) $(INCLUDE_FILES) example/main.cc
 	@touch $@

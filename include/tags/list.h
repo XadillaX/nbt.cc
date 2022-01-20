@@ -48,7 +48,7 @@ class TagList : public BaseTag {
     offset += sizeof(TagType);
 
     // Write the length of the list.
-    uint32_t length_value = static_cast<uint32_t>(tags.size());
+    uint32_t length_value = htobe32(static_cast<uint32_t>(tags.size()));
     memcpy(buffer + offset, &length_value, sizeof(uint32_t));
 
     // Write the tags.
@@ -83,6 +83,7 @@ class TagList : public BaseTag {
     // Read the length of the list.
     uint32_t length_value;
     memcpy(&length_value, buffer + offset + sizeof(TagType), sizeof(uint32_t));
+    length_value = be32toh(length_value);
     if (_child_type == TagType::kTagEnd) {
       if (length_value != 1) {
         return NBTCC_READ_ERROR;

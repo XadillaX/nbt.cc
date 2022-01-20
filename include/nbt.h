@@ -15,16 +15,32 @@ class NBT {
   ~NBT() {}
 
   template <typename T>
-  inline T* Root() {
-    return reinterpret_cast<T*>(_root.get());
+  inline std::shared_ptr<T> GetFromRoot(const std::string& name) {
+    return reinterpret_cast<T*>(_root[name]);
   }
 
-  inline TagCompound* CompoundRoot() { return Root<TagCompound>(); }
+  inline std::shared_ptr<BaseTag> GetFromRoot(const std::string& name) {
+    return _root[name];
+  }
+
+  inline void RootKeys(std::vector<std::string>* keys) {
+    keys->clear();
+    for (auto& kv : _root) {
+      keys->push_back(kv.first);
+    }
+  }
 
   bool Load(const char* buffer, size_t size);
 
  private:
-  std::unique_ptr<BaseTag> _root;
+  struct ReturnedTag {
+    std::shared_ptr<BaseTag> tag;
+    size_t length;
+  };
+  static ReturnedTag GetNextTag(const char* buffer, size_t size, size_t offset);
+
+ private:
+  std::map<std::string, std::shared_ptr<BaseTag>> _root;
 };
 
 }  // namespace nbtcc

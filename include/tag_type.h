@@ -3,7 +3,7 @@
 
 namespace nbtcc {
 
-enum TagType {
+enum TagType : unsigned char {
   kTagEnd = 0,
   kTagByte,
   kTagShort,

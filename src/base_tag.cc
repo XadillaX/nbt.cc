@@ -4,7 +4,9 @@ namespace nbtcc {
 
 using std::string;
 
-#define TAG_TYPE_OFFSET (1)
+#define TAG_TYPE_OFFSET sizeof(TagType)
+
+size_t BaseTag::read_level = 0;
 
 BaseTag::BaseTag(TagType type) : _type(type), _name(""), _value(type) {}
 BaseTag::~BaseTag() {}
@@ -12,7 +14,7 @@ BaseTag::~BaseTag() {}
 size_t BaseTag::ReadFromBuffer(const char* buffer,
                                size_t length,
                                size_t offset) {
-  buffer += TAG_TYPE_OFFSET;
+  PrintDebug("BaseTag::ReadFromBuffer type: %d, offset: %zu\n", _type, offset);
   size_t name_length =
       ReadNameFromBuffer(buffer, length, offset + TAG_TYPE_OFFSET);
   if (name_length == NBTCC_READ_ERROR) {
@@ -24,22 +26,31 @@ size_t BaseTag::ReadFromBuffer(const char* buffer,
     return NBTCC_READ_ERROR;
   }
 
+  PrintDebug("BaseTag::ReadFromBuffer name: %s, body_length: %zu\n",
+             _name.c_str(),
+             body_length);
   return TAG_TYPE_OFFSET + name_length + body_length;
 }
 
 size_t BaseTag::ReadNameFromBuffer(const char* buffer,
                                    size_t length,
                                    size_t offset) {
-  if (offset >= length) {
+  PrintDebug(
+      "BaseTag::ReadNameFromBuffer type: %d, offset: %zu\n", _type, offset);
+  if (offset + sizeof(uint16_t) > length) {
     return NBTCC_READ_ERROR;
   }
 
-  uint16_t name_length = *reinterpret_cast<const uint16_t*>(buffer + offset);
+  uint16_t name_length;
+  memcpy(&name_length, buffer + offset, sizeof(uint16_t));
+  name_length = be16toh(name_length);
+  PrintDebug(" > name_length: %d\n", name_length);
   if (name_length > length - offset - 1) {
     return NBTCC_READ_ERROR;
   }
 
   _name = string(buffer + offset + sizeof(uint16_t), name_length);
+  PrintDebug(" > name: %s\n", _name.c_str());
   return sizeof(uint16_t) + name_length;
 }
 

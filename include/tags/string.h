@@ -23,14 +23,14 @@ class TagString : public BaseTag {
 
     const std::string& str = _value.StringValue();
 
-    uint16_t length_value = str.length();
+    uint16_t length_value = htobe16(str.length());
     memcpy(buffer + offset, &length_value, sizeof(uint16_t));
     offset += sizeof(uint16_t);
 
     memcpy(buffer + offset, str.c_str(), sizeof(char) * str.length());
     offset += sizeof(char) * str.length();
 
-    return offset;
+    return sizeof(uint16_t) + sizeof(char) * str.length();
   }
 
  protected:
@@ -41,9 +41,13 @@ class TagString : public BaseTag {
       return NBTCC_READ_ERROR;
     }
 
+    PrintDebug("TagString::ReadBodyFromBuffer offset: %zu\n", offset);
     uint16_t length_value;
     memcpy(&length_value, buffer + offset, sizeof(uint16_t));
+    length_value = be16toh(length_value);
     offset += sizeof(uint16_t);
+
+    PrintDebug(" > length_value: %d\n", length_value);
 
     if (offset + sizeof(char) * length_value > length) {
       return NBTCC_READ_ERROR;
@@ -51,8 +55,9 @@ class TagString : public BaseTag {
 
     std::string str(buffer + offset, length_value);
     _value.SetStringValue(str);
+    PrintDebug(" > str: %s\n", str.c_str());
 
-    return offset + sizeof(char) * length_value;
+    return sizeof(uint16_t) + sizeof(char) * length_value;
   }
 };
 

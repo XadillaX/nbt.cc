@@ -41,7 +41,7 @@ class TagCompound : public BaseTag {
       buffer[offset + written] = static_cast<int8_t>(pair.second->type());
       written += sizeof(TagType);
       *reinterpret_cast<uint16_t*>(buffer + offset + written) =
-          pair.first.length();
+          htobe16(pair.first.length());
       written += sizeof(uint16_t);
       memcpy(
           buffer + offset + written, pair.first.c_str(), pair.first.length());
@@ -62,7 +62,9 @@ class TagCompound : public BaseTag {
   virtual inline size_t ReadBodyFromBuffer(const char* buffer,
                                            size_t length,
                                            size_t offset) {
+    PrintDebug("TagCompound::ReadBodyFromBuffer offset: %zu\n", offset);
     size_t next_offset = offset;
+    BaseTag::read_level++;
     while (1) {
       size_t read_size = ReadNextTag(buffer, length, next_offset);
       if (read_size == NBTCC_READ_ERROR) {
@@ -76,8 +78,9 @@ class TagCompound : public BaseTag {
 
       next_offset += read_size;
     }
+    BaseTag::read_level--;
 
-    return next_offset - offset + 1;
+    return next_offset - offset;
   }
 
  private:
