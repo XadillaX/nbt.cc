@@ -6,6 +6,48 @@
 
 namespace nbtcc {
 
+using std::shared_ptr;
+using std::string;
+using std::vector;
+
+const shared_ptr<BaseTag> TagCompound::GetChild(const string& key) const {
+  return _value.GetFromCompound(key);
+}
+
+shared_ptr<BaseTag> TagCompound::GetChild(const string& key) {
+  return _value.GetFromCompound(key);
+}
+
+bool TagCompound::SetChild(const string& key,
+                           shared_ptr<BaseTag> tag,
+                           bool overwrite) {
+  return _value.SetToCompound(key, tag, overwrite);
+}
+
+bool TagCompound::EraseChild(const string& key) {
+  if (HasChild(key)) {
+    _value._value._compound->erase(key);
+    return true;
+  }
+
+  return false;
+}
+
+bool TagCompound::HasChild(const string& key) const {
+  return _value._value._compound->find(key) != _value._value._compound->end();
+}
+
+void TagCompound::GetChildKeys(vector<string>* keys) const {
+  keys->clear();
+  for (auto& it : *_value._value._compound) {
+    keys->push_back(it.first);
+  }
+}
+
+void TagCompound::Clear() {
+  _value._value._compound->clear();
+}
+
 size_t TagCompound::ReadNextTag(const char* buffer,
                                 size_t length,
                                 size_t offset) {

@@ -7,6 +7,17 @@ namespace nbtcc {
 
 class TagCompound : public BaseTag {
  public:
+  const std::shared_ptr<BaseTag> GetChild(const std::string& key) const;
+  std::shared_ptr<BaseTag> GetChild(const std::string& key);
+  bool SetChild(const std::string& key,
+                std::shared_ptr<BaseTag> tag,
+                bool overwrite = false);
+  bool HasChild(const std::string& key) const;
+  bool EraseChild(const std::string& key);
+  void GetChildKeys(std::vector<std::string>* vec) const;
+  void Clear();
+
+ public:
   inline TagCompound() : BaseTag(TagType::kTagCompound) {}
   virtual inline ~TagCompound() {}
 

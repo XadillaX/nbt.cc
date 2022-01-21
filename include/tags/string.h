@@ -7,6 +7,12 @@ namespace nbtcc {
 
 class TagString : public BaseTag {
  public:
+  inline std::string ToString() const { return _value.StringValue(); }
+  inline void SetString(const std::string& value) {
+    _value.SetStringValue(value);
+  }
+
+ public:
   inline TagString() : BaseTag(TagType::kTagString) {}
   virtual inline ~TagString() {}
 

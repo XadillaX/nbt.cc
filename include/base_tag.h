@@ -33,13 +33,18 @@ class BaseTag {
   inline TagType type() const { return _type; }
   inline const std::string& name() const { return _name; }
   inline void set_name(const std::string& name) { _name = name; }
-  inline TagValue& value() { return _value; }
-  inline const TagValue& value() const { return _value; }
-
-  // Alias for `name()`.
-  inline const std::string& id() const { return _name; }
-
+  inline TagValue& __value__() { return _value; }
+  inline const TagValue& __value__() const { return _value; }
   size_t count() const;
+
+  // Alias
+  inline const std::string& id() const { return _name; }
+  inline TagType GetType() const { return _type; }
+  inline const std::string& GetName() const { return _name; }
+  inline const std::string& GetId() const { return _name; }
+  inline void SetName(const std::string& name) { _name = name; }
+  inline void SetId(const std::string& id) { _name = id; }
+  inline size_t GetChildCount() const { return count(); }
 
   virtual size_t WriteToBuffer(char* buffer,
                                size_t length,
@@ -82,6 +87,15 @@ inline void PrintDebug(const char*, ...) {}
 
 template <typename T, TagType TAG_ENUM>
 class __TagMetaType__ : public BaseTag {
+ public:
+  inline T GetValue() const {
+    return *reinterpret_cast<const T*>(_value.raw_value_ptr());
+  }
+
+  inline void SetValue(const T& value) {
+    *reinterpret_cast<T*>(_value.raw_value_ptr()) = value;
+  }
+
  public:
   inline __TagMetaType__() : BaseTag(TAG_ENUM) {}
   inline explicit __TagMetaType__(const T value) : BaseTag(TAG_ENUM) {
@@ -137,6 +151,15 @@ class __TagMetaType__ : public BaseTag {
 
 template <typename T, TagType TAG_ENUM>
 class __TagMetaArrayType__ : public BaseTag {
+ public:
+  inline const std::vector<T>& GetValue() const {
+    return *reinterpret_cast<const std::vector<T>*>(_value.void_ptr());
+  }
+
+  inline std::vector<T>& GetValue() {
+    return *reinterpret_cast<std::vector<T>*>(_value.void_ptr());
+  }
+
  public:
   inline __TagMetaArrayType__() : BaseTag(TAG_ENUM) {}
   virtual inline ~__TagMetaArrayType__() {}

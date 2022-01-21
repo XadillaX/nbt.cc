@@ -7,6 +7,19 @@ namespace nbtcc {
 
 class TagList : public BaseTag {
  public:
+  const std::shared_ptr<BaseTag> GetChild(size_t index) const;
+  std::shared_ptr<BaseTag> GetChild(size_t index);
+  bool SetChild(size_t index, std::shared_ptr<BaseTag> tag);
+  bool EraseChild(size_t index);
+  void Clear();
+
+  bool Insert(size_t index, std::shared_ptr<BaseTag> tag);
+  bool PushBack(std::shared_ptr<BaseTag> tag);
+  bool PopBack();
+  bool PushFront(std::shared_ptr<BaseTag> tag);
+  bool PopFront();
+
+ public:
   inline TagList()
       : BaseTag(TagType::kTagList), _child_type(TagType::kTagEnd) {}
   explicit inline TagList(TagType child_type)

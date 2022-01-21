@@ -29,80 +29,100 @@ void Dump(const nbtcc::BaseTag& tag,
   }
   switch (tag.type()) {
     case nbtcc::TagType::kTagByte:
-      cout << " Byte(" << static_cast<int32_t>(tag.value().ByteValue()) << ")"
-           << endl;
+      cout << " Byte("
+           << static_cast<int32_t>(tag.AsPtr<nbtcc::TagByte>()->GetValue())
+           << ")" << endl;
       break;
 
     case nbtcc::TagType::kTagShort:
-      cout << " Short(" << static_cast<int32_t>(tag.value().ShortValue()) << ")"
-           << endl;
+      cout << " Short("
+           << static_cast<int32_t>(tag.AsPtr<nbtcc::TagShort>()->GetValue())
+           << ")" << endl;
       break;
 
     case nbtcc::TagType::kTagInt:
-      cout << " Int(" << tag.value().IntValue() << ")" << endl;
+      cout << " Int(" << tag.AsPtr<nbtcc::TagInt>()->GetValue() << ")" << endl;
       break;
 
     case nbtcc::TagType::kTagLong:
-      cout << " Long(" << tag.value().LongValue() << ")" << endl;
+      cout << " Long(" << tag.AsPtr<nbtcc::TagLong>()->GetValue() << ")"
+           << endl;
       break;
 
     case nbtcc::TagType::kTagFloat:
-      cout << " Float(" << tag.value().FloatValue() << ")" << endl;
+      cout << " Float(" << tag.AsPtr<nbtcc::TagFloat>()->GetValue() << ")"
+           << endl;
       break;
 
     case nbtcc::TagType::kTagDouble:
-      cout << " Double(" << tag.value().DoubleValue() << ")" << endl;
+      cout << " Double(" << tag.AsPtr<nbtcc::TagDouble>()->GetValue() << ")"
+           << endl;
       break;
 
-    case nbtcc::TagType::kTagByteArray:
+    case nbtcc::TagType::kTagByteArray: {
       cout << endl;
-      for (size_t i = 0; i < tag.value().ByteArrayValue().size(); ++i) {
+      const nbtcc::TagByteArray* array = tag.AsPtr<nbtcc::TagByteArray>();
+      const vector<int8_t>& bytes = array->GetValue();
+      for (size_t i = 0; i < bytes.size(); ++i) {
         for (size_t j = 0; j < level + 1; ++j) {
           cout << "  ";
         }
 
-        cout << "- " << static_cast<int32_t>(tag.value().ByteArrayValue()[i])
-             << endl;
+        cout << "- " << static_cast<int32_t>(bytes[i]) << endl;
       }
       break;
+    }
 
-    case nbtcc::TagType::kTagIntArray:
+    case nbtcc::TagType::kTagIntArray: {
       cout << endl;
-      for (size_t i = 0; i < tag.value().IntArrayValue().size(); ++i) {
+      const nbtcc::TagIntArray* array = tag.AsPtr<nbtcc::TagIntArray>();
+      const vector<int32_t>& ints = array->GetValue();
+      for (size_t i = 0; i < ints.size(); ++i) {
         for (size_t j = 0; j < level + 1; ++j) {
           cout << "  ";
         }
 
-        cout << "- " << tag.value().IntArrayValue()[i] << endl;
+        cout << "- " << ints[i] << endl;
       }
       break;
+    }
 
     case nbtcc::TagType::kTagString:
-      cout << " String(\"" << tag.value().StringValue() << "\")" << endl;
+      cout << " String(\"" << tag.AsPtr<nbtcc::TagString>()->ToString() << "\")"
+           << endl;
       break;
 
     case nbtcc::TagType::kTagCompound: {
       if (!list_children) cout << endl;
-
-      const std::map<std::string, shared_ptr<nbtcc::BaseTag>>* children =
-          reinterpret_cast<
-              const std::map<std::string, shared_ptr<nbtcc::BaseTag>>*>(
-              tag.value().void_ptr());
-      bool first = true;
-      for (const auto& child : *children) {
-        Dump(*child.second, level + 1, false, first && list_children ? 1 : -1);
-        first = false;
+      vector<string> keys;
+      const nbtcc::TagCompound* compound = tag.AsPtr<nbtcc::TagCompound>();
+      compound->GetChildKeys(&keys);
+      for (size_t i = 0; i < keys.size(); ++i) {
+        const shared_ptr<nbtcc::BaseTag> child = compound->GetChild(keys[i]);
+        if (child.get()) {
+          Dump(*child.get(),
+               level + 1,
+               false,
+               i == 0 && list_children ? 1 : -1);
+        } else {
+          cout << "ERROR: Child not found" << endl;
+        }
       }
+
       break;
     }
 
     case nbtcc::TagType::kTagList: {
       cout << endl;
-      const std::vector<shared_ptr<nbtcc::BaseTag>>* children =
-          reinterpret_cast<const std::vector<shared_ptr<nbtcc::BaseTag>>*>(
-              tag.value().void_ptr());
-      for (const auto& child : *children) {
-        Dump(*child, level + 1, true);
+      const nbtcc::TagList* list = tag.AsPtr<nbtcc::TagList>();
+      size_t size = list->GetChildCount();
+      for (size_t i = 0; i < size; ++i) {
+        const shared_ptr<nbtcc::BaseTag> child = list->GetChild(i);
+        if (child.get()) {
+          Dump(*child.get(), level + 1, true);
+        } else {
+          cout << "ERROR: Child not found" << endl;
+        }
       }
       break;
     }
