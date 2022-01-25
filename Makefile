@@ -1,7 +1,7 @@
 BUILDTYPE ?= Release
 
 AR_FLAGS := rcs
-CC_FLAGS := -Wall -Wextra -Werror
+CC_FLAGS := -Wall -Wextra -Werror -std=c++11
 CC_FLAGS += -Iinclude
 
 SRC_DIR := $(CURDIR)/src

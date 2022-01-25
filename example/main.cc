@@ -100,10 +100,8 @@ void Dump(const nbtcc::BaseTag& tag,
       for (size_t i = 0; i < keys.size(); ++i) {
         const shared_ptr<nbtcc::BaseTag> child = compound->GetChild(keys[i]);
         if (child.get()) {
-          Dump(*child.get(),
-               level + 1,
-               false,
-               i == 0 && list_children ? 1 : -1);
+          Dump(
+              *child.get(), level + 1, false, i == 0 && list_children ? 1 : -1);
         } else {
           cout << "ERROR: Child not found" << endl;
         }
