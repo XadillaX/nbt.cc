@@ -10,6 +10,9 @@ namespace nbtcc {
 #define NBTCC_READ_ERROR static_cast<size_t>(-1)
 #define NBTCC_WRITE_ERROR static_cast<size_t>(-1)
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wstrict-aliasing"
+
 class TagList;
 class BaseTag {
   friend class TagList;
@@ -260,6 +263,8 @@ class __TagMetaArrayType__ : public BaseTag {
     return reinterpret_cast<const std::vector<T>*>(_value.void_ptr());
   }
 };
+
+#pragma GCC diagnostic pop
 
 }  // namespace nbtcc
 
