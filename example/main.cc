@@ -166,5 +166,23 @@ int main(int argc, char** argv) {
     Dump(*tag, 0);
   }
 
+  // Write back
+  size_t new_size = nbt.GetBufferSize();
+  char* new_data = reinterpret_cast<char*>(malloc(new_size));
+  size_t wrote = nbt.Write(new_data, new_size);
+
+  printf("Wrote %zu bytes\n", wrote);
+  if (!nbt.Load(new_data, new_size)) {
+    cout << "Could not load NBT data\n";
+    return 1;
+  }
+
+  nbt.RootKeys(&root_keys);
+  for (size_t i = 0; i < root_keys.size(); i++) {
+    shared_ptr<nbtcc::BaseTag> tag = nbt.GetFromRoot(root_keys[i]);
+    assert(tag.get());
+    Dump(*tag, 0);
+  }
+
   return 0;
 }

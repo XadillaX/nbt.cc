@@ -1,27 +1,8 @@
 #ifndef INCLUDE_BASE_TAG_H_
 #define INCLUDE_BASE_TAG_H_
 
-#ifdef __APPLE__
-#include <libkern/OSByteOrder.h>
-
-#define htobe16(x) OSSwapHostToBigInt16(x)
-#define htole16(x) OSSwapHostToLittleInt16(x)
-#define be16toh(x) OSSwapBigToHostInt16(x)
-#define le16toh(x) OSSwapLittleToHostInt16(x)
-
-#define htobe32(x) OSSwapHostToBigInt32(x)
-#define htole32(x) OSSwapHostToLittleInt32(x)
-#define be32toh(x) OSSwapBigToHostInt32(x)
-#define le32toh(x) OSSwapLittleToHostInt32(x)
-
-#define htobe64(x) OSSwapHostToBigInt64(x)
-#define htole64(x) OSSwapHostToLittleInt64(x)
-#define be64toh(x) OSSwapBigToHostInt64(x)
-#define le64toh(x) OSSwapLittleToHostInt64(x)
-#else
-#include <endian.h>
-#endif
 #include <stdarg.h>
+#include "__endian.h"
 #include "tag_value.h"
 
 namespace nbtcc {
@@ -133,11 +114,14 @@ class __TagMetaType__ : public BaseTag {
 
     T value = *reinterpret_cast<const T*>(_value.raw_value_ptr());
     if (sizeof(T) == 2) {
-      value = htobe16(value);
+      *reinterpret_cast<uint16_t*>(&value) =
+          htobe16(*reinterpret_cast<uint16_t*>(&value));
     } else if (sizeof(T) == 4) {
-      value = htobe32(value);
+      *reinterpret_cast<uint32_t*>(&value) =
+          htobe32(*reinterpret_cast<uint32_t*>(&value));
     } else if (sizeof(T) == 8) {
-      value = htobe64(value);
+      *reinterpret_cast<uint64_t*>(&value) =
+          htobe64(*reinterpret_cast<uint64_t*>(&value));
     }
 
     memcpy(buffer + offset, &value, sizeof(T));
@@ -248,15 +232,20 @@ class __TagMetaArrayType__ : public BaseTag {
 
     std::vector<T>* array = GetVector();
     array->resize(array_size);
+    T* data = array->data();
     for (size_t i = next_offset, j = 0; i < end_offset; i += sizeof(T), j++) {
       if (sizeof(T) == 2) {
-        (*array)[j] = be16toh(*reinterpret_cast<const T*>(buffer + i));
+        *reinterpret_cast<uint16_t*>(data + j) =
+            be16toh(*reinterpret_cast<const uint16_t*>(buffer + i));
       } else if (sizeof(T) == 4) {
-        (*array)[j] = be32toh(*reinterpret_cast<const T*>(buffer + i));
+        *reinterpret_cast<uint32_t*>(data + j) =
+            be32toh(*reinterpret_cast<const uint32_t*>(buffer + i));
       } else if (sizeof(T) == 8) {
-        (*array)[j] = be64toh(*reinterpret_cast<const T*>(buffer + i));
+        *reinterpret_cast<uint64_t*>(data + j) =
+            be64toh(*reinterpret_cast<const uint64_t*>(buffer + i));
       } else {
-        (*array)[j] = *reinterpret_cast<const T*>(buffer + i);
+        *reinterpret_cast<uint8_t*>(data + j) =
+            *reinterpret_cast<const uint8_t*>(buffer + i);
       }
     }
 
