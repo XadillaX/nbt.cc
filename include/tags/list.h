@@ -57,12 +57,13 @@ class TagList : public BaseTag {
     }
 
     // Write the type of the list.
-    buffer[offset] = static_cast<char>(_type);
+    buffer[offset] = static_cast<char>(_child_type);
     offset += sizeof(TagType);
 
     // Write the length of the list.
     uint32_t length_value = htobe32(static_cast<uint32_t>(tags.size()));
     memcpy(buffer + offset, &length_value, sizeof(uint32_t));
+    offset += sizeof(uint32_t);
 
     // Write the tags.
     for (auto it = tags.begin(); it != tags.end(); it++) {
