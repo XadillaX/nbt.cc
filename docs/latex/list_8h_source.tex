@@ -1,0 +1,151 @@
+\hypertarget{list_8h_source}{}\doxysection{list.\+h}
+\label{list_8h_source}\index{include/tags/list.h@{include/tags/list.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef INCLUDE\_TAGS\_LIST\_H\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define INCLUDE\_TAGS\_LIST\_H\_}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}base\_tag.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}nbt\_version.h"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{namespace }nbtcc \{}
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classnbtcc_1_1TagList}{TagList}} : \textcolor{keyword}{public} \mbox{\hyperlink{classnbtcc_1_1BaseTag}{BaseTag}} \{}
+\DoxyCodeLine{18  \textcolor{keyword}{public}:}
+\DoxyCodeLine{24   \textcolor{keyword}{const} std::shared\_ptr<BaseTag> \mbox{\hyperlink{classnbtcc_1_1TagList_acd44a9d7c894db8dbe68a72495ff1f1f}{GetChild}}(\textcolor{keywordtype}{size\_t} index) \textcolor{keyword}{const};}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{31   std::shared\_ptr<BaseTag> \mbox{\hyperlink{classnbtcc_1_1TagList_acb9326020ae10ad5aba3f3d4b2c2d3ab}{GetChild}}(\textcolor{keywordtype}{size\_t} index);}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{39   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classnbtcc_1_1TagList_af86eba2559babffdbf140ce09a153220}{SetChild}}(\textcolor{keywordtype}{size\_t} index, std::shared\_ptr<BaseTag> tag);}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{47   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classnbtcc_1_1TagList_a5ebdab347fa5cfc6b8ac304bff6675d6}{EraseChild}}(\textcolor{keywordtype}{size\_t} index);}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{52   \textcolor{keywordtype}{void} \mbox{\hyperlink{classnbtcc_1_1TagList_a982f1622376cfa2d63e40c8e3f3b5971}{Clear}}();}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{60   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classnbtcc_1_1TagList_a30e095b358eaf14d4003b5b3eaf4a8ac}{Insert}}(\textcolor{keywordtype}{size\_t} index, std::shared\_ptr<BaseTag> tag);}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{68   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classnbtcc_1_1TagList_a315bc5cab70eef00d18654a9922e0244}{PushBack}}(std::shared\_ptr<BaseTag> tag);}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{75   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classnbtcc_1_1TagList_ab65cbd024051239706e674bab5d516a0}{PopBack}}();}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{83   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classnbtcc_1_1TagList_a9dfc843beb7cad6df481a1a881841a2c}{PushFront}}(std::shared\_ptr<BaseTag> tag);}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{90   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classnbtcc_1_1TagList_a8181c8644a1e16b0be54a9f76e3589de}{PopFront}}();}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92  \textcolor{keyword}{public}:}
+\DoxyCodeLine{96   \textcolor{keyword}{inline} \mbox{\hyperlink{classnbtcc_1_1TagList_a7c5ec4cd16c428785a80ae68920f8bf4}{TagList}}()}
+\DoxyCodeLine{97       : \mbox{\hyperlink{classnbtcc_1_1BaseTag}{BaseTag}}(\mbox{\hyperlink{group__Tags_ga88e0f89c109ed5d0d80840a3d53b8fd5}{TagType}}::\mbox{\hyperlink{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5a374a5cdefa9f1e05d518ff276488698a}{kTagList}}), \_child\_type(\mbox{\hyperlink{group__Tags_ga88e0f89c109ed5d0d80840a3d53b8fd5}{TagType}}::\mbox{\hyperlink{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5a975a4c32dfab1abf9c4a9e8b75f2ad37}{kTagEnd}}) \{\}}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{103   \textcolor{keyword}{explicit} \textcolor{keyword}{inline} \mbox{\hyperlink{classnbtcc_1_1TagList_a723c313e0668cd9d42201ab84d6e0c62}{TagList}}(\mbox{\hyperlink{group__Tags_ga88e0f89c109ed5d0d80840a3d53b8fd5}{TagType}} \mbox{\hyperlink{classnbtcc_1_1TagList_af3cce8999b42ce278561893940f9ef06}{child\_type}})}
+\DoxyCodeLine{104       : \mbox{\hyperlink{classnbtcc_1_1BaseTag}{BaseTag}}(\mbox{\hyperlink{group__Tags_ga88e0f89c109ed5d0d80840a3d53b8fd5}{TagType}}::\mbox{\hyperlink{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5a374a5cdefa9f1e05d518ff276488698a}{kTagList}}), \_child\_type(\mbox{\hyperlink{classnbtcc_1_1TagList_af3cce8999b42ce278561893940f9ef06}{child\_type}}) \{\}}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{109   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classnbtcc_1_1TagList_aa02cee2ce0d30a35d114832129a52b8b}{\string~TagList}}() \{\}}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classnbtcc_1_1TagList_a441f4ff2db5a5ee6b8bbcbb3804a3f91}{CalculateSize}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{112     \textcolor{comment}{// First byte is the type of the list, then followed by the length (4 bytes)}}
+\DoxyCodeLine{113     \textcolor{comment}{// of the list.}}
+\DoxyCodeLine{114     \textcolor{keywordtype}{size\_t} size = \textcolor{keyword}{sizeof}(\mbox{\hyperlink{group__Tags_ga88e0f89c109ed5d0d80840a3d53b8fd5}{TagType}}) + \textcolor{keyword}{sizeof}(int32\_t);}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116     \textcolor{keyword}{const} std::vector<std::shared\_ptr<BaseTag>>\& tags = *\mbox{\hyperlink{classnbtcc_1_1BaseTag_ae8618c8fbedc773027cf32ca12a5e3e5}{\_value}}.\_value.\mbox{\hyperlink{unionnbtcc_1_1TagValueUnion_a2d9532ce8b491e1c36f75c4fa4a559d1}{\_list}};}
+\DoxyCodeLine{117     \textcolor{keywordflow}{if} (tags.empty()) \{}
+\DoxyCodeLine{118       \textcolor{keywordflow}{return} size;}
+\DoxyCodeLine{119     \}}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = tags.begin(); it != tags.end(); ++it) \{}
+\DoxyCodeLine{122       size += (*it)-\/>CalculateSize();}
+\DoxyCodeLine{123     \}}
+\DoxyCodeLine{124     \textcolor{keywordflow}{return} size;}
+\DoxyCodeLine{125   \}}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classnbtcc_1_1TagList_a50ba61aafe29d6b530242e7a1590bcc2}{WriteToBuffer}}(\textcolor{keywordtype}{char}* buffer,}
+\DoxyCodeLine{128                                       \textcolor{keywordtype}{size\_t} length,}
+\DoxyCodeLine{129                                       \textcolor{keywordtype}{size\_t} offset)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{130     \textcolor{keywordtype}{size\_t} total\_size = \mbox{\hyperlink{classnbtcc_1_1TagList_a441f4ff2db5a5ee6b8bbcbb3804a3f91}{CalculateSize}}();}
+\DoxyCodeLine{131     \textcolor{keywordflow}{if} (offset + total\_size > length) \{}
+\DoxyCodeLine{132       \textcolor{keywordflow}{return} \mbox{\hyperlink{group__Constants_ga087c0c9b24acf33c1b03e7a1bc3f2214}{NBTCC\_WRITE\_ERROR}};}
+\DoxyCodeLine{133     \}}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135     \textcolor{keyword}{const} std::vector<std::shared\_ptr<BaseTag>>\& tags = *\mbox{\hyperlink{classnbtcc_1_1BaseTag_ae8618c8fbedc773027cf32ca12a5e3e5}{\_value}}.\_value.\mbox{\hyperlink{unionnbtcc_1_1TagValueUnion_a2d9532ce8b491e1c36f75c4fa4a559d1}{\_list}};}
+\DoxyCodeLine{136     \textcolor{keywordflow}{if} (tags.empty()) \{}
+\DoxyCodeLine{137       memset(buffer + offset, 0, total\_size);}
+\DoxyCodeLine{138       \textcolor{keywordflow}{return} total\_size;}
+\DoxyCodeLine{139     \}}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141     \textcolor{comment}{// Write the type of the list.}}
+\DoxyCodeLine{142     buffer[offset] = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{char}\textcolor{keyword}{>}(\_child\_type);}
+\DoxyCodeLine{143     offset += \textcolor{keyword}{sizeof}(\mbox{\hyperlink{group__Tags_ga88e0f89c109ed5d0d80840a3d53b8fd5}{TagType}});}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145     \textcolor{comment}{// Write the length of the list.}}
+\DoxyCodeLine{146     uint32\_t length\_value = htobe32(\textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(tags.size()));}
+\DoxyCodeLine{147     memcpy(buffer + offset, \&length\_value, \textcolor{keyword}{sizeof}(uint32\_t));}
+\DoxyCodeLine{148     offset += \textcolor{keyword}{sizeof}(uint32\_t);}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150     \textcolor{comment}{// Write the tags.}}
+\DoxyCodeLine{151     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = tags.begin(); it != tags.end(); it++) \{}
+\DoxyCodeLine{152       \textcolor{keywordtype}{size\_t} tag\_size = (*it)-\/>WriteToBuffer(buffer, length, offset);}
+\DoxyCodeLine{153       \textcolor{keywordflow}{if} (tag\_size == \mbox{\hyperlink{group__Constants_ga087c0c9b24acf33c1b03e7a1bc3f2214}{NBTCC\_WRITE\_ERROR}}) \{}
+\DoxyCodeLine{154         \textcolor{keywordflow}{return} \mbox{\hyperlink{group__Constants_ga087c0c9b24acf33c1b03e7a1bc3f2214}{NBTCC\_WRITE\_ERROR}};}
+\DoxyCodeLine{155       \}}
+\DoxyCodeLine{156       offset += tag\_size;}
+\DoxyCodeLine{157     \}}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{159     \textcolor{keywordflow}{return} total\_size;}
+\DoxyCodeLine{160   \}}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{165   \textcolor{keyword}{inline} \mbox{\hyperlink{group__Tags_ga88e0f89c109ed5d0d80840a3d53b8fd5}{TagType}} \mbox{\hyperlink{classnbtcc_1_1TagList_af3cce8999b42ce278561893940f9ef06}{child\_type}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \_child\_type; \}}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{168   \textcolor{keyword}{virtual} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classnbtcc_1_1TagList_aebb9e9cf5993b1a8765956ea24558c49}{ReadBodyFromBuffer}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* buffer,}
+\DoxyCodeLine{169                                     \textcolor{keywordtype}{size\_t} length,}
+\DoxyCodeLine{170                                     \textcolor{keywordtype}{size\_t} offset) \{}
+\DoxyCodeLine{171     \textcolor{keywordflow}{if} (offset + \textcolor{keyword}{sizeof}(\mbox{\hyperlink{group__Tags_ga88e0f89c109ed5d0d80840a3d53b8fd5}{TagType}}) + \textcolor{keyword}{sizeof}(uint32\_t) > length) \{}
+\DoxyCodeLine{172       \textcolor{keywordflow}{return} \mbox{\hyperlink{group__Constants_ga61d070a9afd3491ae8982e19c3be4bd9}{NBTCC\_READ\_ERROR}};}
+\DoxyCodeLine{173     \}}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{175     \textcolor{comment}{// Read the type of the list.}}
+\DoxyCodeLine{176     uint8\_t \mbox{\hyperlink{classnbtcc_1_1BaseTag_a41bcfc53e9f8360d2323482bab34f85e}{type}} = \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(buffer[offset]);}
+\DoxyCodeLine{177     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classnbtcc_1_1BaseTag_a41bcfc53e9f8360d2323482bab34f85e}{type}} >= \mbox{\hyperlink{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5a0750be0ab18241a6bc2e42944694c5fb}{TagType::kTagMax}}) \{}
+\DoxyCodeLine{178       \textcolor{keywordflow}{return} \mbox{\hyperlink{group__Constants_ga61d070a9afd3491ae8982e19c3be4bd9}{NBTCC\_READ\_ERROR}};}
+\DoxyCodeLine{179     \}}
+\DoxyCodeLine{180     \_child\_type = \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{group__Tags_ga88e0f89c109ed5d0d80840a3d53b8fd5}{TagType}}\textcolor{keyword}{>}(\mbox{\hyperlink{classnbtcc_1_1BaseTag_a41bcfc53e9f8360d2323482bab34f85e}{type}});}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182     \textcolor{comment}{// Read the length of the list.}}
+\DoxyCodeLine{183     uint32\_t length\_value;}
+\DoxyCodeLine{184     memcpy(\&length\_value, buffer + offset + \textcolor{keyword}{sizeof}(\mbox{\hyperlink{group__Tags_ga88e0f89c109ed5d0d80840a3d53b8fd5}{TagType}}), \textcolor{keyword}{sizeof}(uint32\_t));}
+\DoxyCodeLine{185     length\_value = be32toh(length\_value);}
+\DoxyCodeLine{186     \textcolor{keywordflow}{if} (\_child\_type == \mbox{\hyperlink{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5a975a4c32dfab1abf9c4a9e8b75f2ad37}{TagType::kTagEnd}}) \{}
+\DoxyCodeLine{187       \textcolor{keywordflow}{if} (length\_value != 1) \{}
+\DoxyCodeLine{188         \textcolor{keywordflow}{return} \mbox{\hyperlink{group__Constants_ga61d070a9afd3491ae8982e19c3be4bd9}{NBTCC\_READ\_ERROR}};}
+\DoxyCodeLine{189       \}}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{191       \textcolor{keywordflow}{return} \textcolor{keyword}{sizeof}(\mbox{\hyperlink{group__Tags_ga88e0f89c109ed5d0d80840a3d53b8fd5}{TagType}}) + \textcolor{keyword}{sizeof}(uint32\_t);}
+\DoxyCodeLine{192     \}}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194     \textcolor{keywordtype}{size\_t} size = \textcolor{keyword}{sizeof}(\mbox{\hyperlink{group__Tags_ga88e0f89c109ed5d0d80840a3d53b8fd5}{TagType}}) + \textcolor{keyword}{sizeof}(uint32\_t);}
+\DoxyCodeLine{195     offset += size;}
+\DoxyCodeLine{196     std::vector<std::shared\_ptr<BaseTag>>\& tags = *\mbox{\hyperlink{classnbtcc_1_1BaseTag_ae8618c8fbedc773027cf32ca12a5e3e5}{\_value}}.\_value.\mbox{\hyperlink{unionnbtcc_1_1TagValueUnion_a2d9532ce8b491e1c36f75c4fa4a559d1}{\_list}};}
+\DoxyCodeLine{197     tags.resize(length\_value);}
+\DoxyCodeLine{198     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < length\_value; i++) \{}
+\DoxyCodeLine{199       \textcolor{keywordtype}{size\_t} read\_size = \mbox{\hyperlink{classnbtcc_1_1TagList_a710abb3110100264275511b72df977e1}{ReadNextTag}}(buffer, length, offset, i);}
+\DoxyCodeLine{200       \textcolor{keywordflow}{if} (read\_size == \mbox{\hyperlink{group__Constants_ga61d070a9afd3491ae8982e19c3be4bd9}{NBTCC\_READ\_ERROR}}) \{}
+\DoxyCodeLine{201         \textcolor{keywordflow}{return} \mbox{\hyperlink{group__Constants_ga61d070a9afd3491ae8982e19c3be4bd9}{NBTCC\_READ\_ERROR}};}
+\DoxyCodeLine{202       \}}
+\DoxyCodeLine{203       offset += read\_size;}
+\DoxyCodeLine{204       size += read\_size;}
+\DoxyCodeLine{205     \}}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207     \textcolor{keywordflow}{return} size;}
+\DoxyCodeLine{208   \}}
+\DoxyCodeLine{209 }
+\DoxyCodeLine{218   \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classnbtcc_1_1TagList_a710abb3110100264275511b72df977e1}{ReadNextTag}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* buffer,}
+\DoxyCodeLine{219                      \textcolor{keywordtype}{size\_t} length,}
+\DoxyCodeLine{220                      \textcolor{keywordtype}{size\_t} offset,}
+\DoxyCodeLine{221                      \textcolor{keywordtype}{size\_t} idx);}
+\DoxyCodeLine{222 }
+\DoxyCodeLine{223  \textcolor{keyword}{private}:}
+\DoxyCodeLine{224   \mbox{\hyperlink{group__Tags_ga88e0f89c109ed5d0d80840a3d53b8fd5}{TagType}} \_child\_type;}
+\DoxyCodeLine{225 \};}
+\DoxyCodeLine{229 \}  \textcolor{comment}{// namespace nbtcc}}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{231 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// INCLUDE\_TAGS\_LIST\_H\_}}
+
+\end{DoxyCode}
