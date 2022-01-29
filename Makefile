@@ -77,17 +77,20 @@ docs: $(INCLUDE_FILES) Doxyfile README.md
 
 .PHONY: publish-docs
 publish-docs:
+	rm -rf docs
 	cp ./tools/touch_gh-pages_file touch_gh-pages_file
+	cp -R include include.tmp
 	git branch -D gh-pages || echo 0
 	git checkout -b gh-pages
 	git pull origin gh-pages
 	git merge main --no-ff
 	rm -rf docs
+	rm -rf include
+	mv include.tmp include
 	$(MAKE) docs
 	./touch_gh-pages_file
 	rm touch_gh-pages_file
 	git rm -rf example || echo 0
-	git rm -rf include || echo 0
 	git rm -rf src || echo 0
 	git rm -rf tools || echo 0
 	git rm -rf .clang-format || echo 0
@@ -96,6 +99,7 @@ publish-docs:
 	git rm -rf CPPLINT.cfg || echo 0
 	mv docs/html/* docs/ && rm -rf docs/html
 	git add -f docs || echo 0
+	git add include
 	git add seed
 	git commit -m "Update docs"
 	git push origin gh-pages
