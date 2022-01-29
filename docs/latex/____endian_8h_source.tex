@@ -1,0 +1,31 @@
+\hypertarget{____endian_8h_source}{}\doxysection{\+\_\+\+\_\+endian.\+h}
+\label{____endian_8h_source}\index{include/\_\_endian.h@{include/\_\_endian.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef INCLUDE\_\_\_ENDIAN\_H\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define INCLUDE\_\_\_ENDIAN\_H\_}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#ifdef \_\_APPLE\_\_}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <libkern/OSByteOrder.h>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define htobe16(x) OSSwapHostToBigInt16(x)}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define htole16(x) OSSwapHostToLittleInt16(x)}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define be16toh(x) OSSwapBigToHostInt16(x)}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define le16toh(x) OSSwapLittleToHostInt16(x)}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define htobe32(x) OSSwapHostToBigInt32(x)}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define htole32(x) OSSwapHostToLittleInt32(x)}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define be32toh(x) OSSwapBigToHostInt32(x)}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define le32toh(x) OSSwapLittleToHostInt32(x)}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define htobe64(x) OSSwapHostToBigInt64(x)}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define htole64(x) OSSwapHostToLittleInt64(x)}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define be64toh(x) OSSwapBigToHostInt64(x)}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define le64toh(x) OSSwapLittleToHostInt64(x)}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include <endian.h>}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// INCLUDE\_\_\_ENDIAN\_H\_}}
+
+\end{DoxyCode}

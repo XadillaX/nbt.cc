@@ -1,0 +1,278 @@
+\hypertarget{base__tag_8h_source}{}\doxysection{base\+\_\+tag.\+h}
+\label{base__tag_8h_source}\index{include/base\_tag.h@{include/base\_tag.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef INCLUDE\_BASE\_TAG\_H\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define INCLUDE\_BASE\_TAG\_H\_}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <stdarg.h>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\_\_endian.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}nbt\_version.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}tag\_value.h"{}}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{keyword}{namespace }nbtcc \{}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define NBTCC\_READ\_ERROR static\_cast<size\_t>(-\/1)   }}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#define NBTCC\_WRITE\_ERROR static\_cast<size\_t>(-\/1)  }}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#pragma GCC diagnostic push}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#pragma GCC diagnostic ignored "{}-\/Wstrict-\/aliasing"{}}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{43 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__Utils_gaa343595fcff12d41375167ee23c31134}{PrintDebug}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* format, ...);}
+\DoxyCodeLine{48 \textcolor{keyword}{class }\mbox{\hyperlink{classnbtcc_1_1TagList}{TagList}};}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{58 \textcolor{keyword}{class }\mbox{\hyperlink{classnbtcc_1_1BaseTag}{BaseTag}} \{}
+\DoxyCodeLine{59   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classnbtcc_1_1TagList}{TagList}};}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61  \textcolor{keyword}{public}:}
+\DoxyCodeLine{66   \textcolor{keyword}{explicit} \mbox{\hyperlink{classnbtcc_1_1BaseTag_a11a3d08dee8cf35ea4dd7093cb9edb1f}{BaseTag}}(\mbox{\hyperlink{group__Tags_ga88e0f89c109ed5d0d80840a3d53b8fd5}{TagType}} \mbox{\hyperlink{classnbtcc_1_1BaseTag_a41bcfc53e9f8360d2323482bab34f85e}{type}});}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{71   \textcolor{keyword}{virtual} \mbox{\hyperlink{classnbtcc_1_1BaseTag_a0ace0830d0d1e1727c24009fc5d6db05}{\string~BaseTag}}();}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{80   \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classnbtcc_1_1BaseTag_a46a9fc585773abdfb3ac0f4c6946a336}{ReadFromBuffer}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* buffer, \textcolor{keywordtype}{size\_t} length, \textcolor{keywordtype}{size\_t} offset);}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{86   \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{87   \textcolor{keyword}{inline} T* \mbox{\hyperlink{classnbtcc_1_1BaseTag_a85100262339ed71f1e3cf9eed75417c8}{AsPtr}}() \{}
+\DoxyCodeLine{88     \textcolor{keywordflow}{return} \textcolor{keyword}{reinterpret\_cast<}T*\textcolor{keyword}{>}(\textcolor{keyword}{this});}
+\DoxyCodeLine{89   \}}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{95   \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{96   \textcolor{keyword}{inline} \textcolor{keyword}{const} T* \mbox{\hyperlink{classnbtcc_1_1BaseTag_a5e96de921d0324aec70d4e3b7f50d5c9}{AsPtr}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{97     \textcolor{keywordflow}{return} \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }T*\textcolor{keyword}{>}(\textcolor{keyword}{this});}
+\DoxyCodeLine{98   \}}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{104   \textcolor{keyword}{inline} \mbox{\hyperlink{group__Tags_ga88e0f89c109ed5d0d80840a3d53b8fd5}{TagType}} \mbox{\hyperlink{classnbtcc_1_1BaseTag_a41bcfc53e9f8360d2323482bab34f85e}{type}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classnbtcc_1_1BaseTag_af6ed66749a3fba624daece43041e93fb}{\_type}}; \}}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{110   \textcolor{keyword}{inline} \textcolor{keyword}{const} std::string\& \mbox{\hyperlink{classnbtcc_1_1BaseTag_aa15af8b6592547494c3383478cd40d2a}{name}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classnbtcc_1_1BaseTag_a66f50acc715915750a7062706168174a}{\_name}}; \}}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{116   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classnbtcc_1_1BaseTag_a6f248ef12443e576ff790486766d9988}{set\_name}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{classnbtcc_1_1BaseTag_aa15af8b6592547494c3383478cd40d2a}{name}}) \{ \mbox{\hyperlink{classnbtcc_1_1BaseTag_a66f50acc715915750a7062706168174a}{\_name}} = \mbox{\hyperlink{classnbtcc_1_1BaseTag_aa15af8b6592547494c3383478cd40d2a}{name}}; \}}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{123   \textcolor{keyword}{inline} \mbox{\hyperlink{classnbtcc_1_1TagValue}{TagValue}}\& \mbox{\hyperlink{classnbtcc_1_1BaseTag_a919f092e704e35b82fafe85cc2a5c877}{\_\_value\_\_}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classnbtcc_1_1BaseTag_ae8618c8fbedc773027cf32ca12a5e3e5}{\_value}}; \}}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{130   \textcolor{keyword}{inline} \textcolor{keyword}{const} \mbox{\hyperlink{classnbtcc_1_1TagValue}{TagValue}}\& \mbox{\hyperlink{classnbtcc_1_1BaseTag_a3b8509e202fafc61cba6d8a7158d02e9}{\_\_value\_\_}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classnbtcc_1_1BaseTag_ae8618c8fbedc773027cf32ca12a5e3e5}{\_value}}; \}}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{135   \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classnbtcc_1_1BaseTag_a2fa312ac3ab0a065186b27b63dcff41f}{count}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137   \textcolor{comment}{// Alias}}
+\DoxyCodeLine{142 \textcolor{comment}{}  \textcolor{keyword}{inline} \textcolor{keyword}{const} std::string\& \mbox{\hyperlink{classnbtcc_1_1BaseTag_a17cd2891ce53fc93d665ffa26e2807c6}{id}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classnbtcc_1_1BaseTag_a66f50acc715915750a7062706168174a}{\_name}}; \}}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{148   \textcolor{keyword}{inline} \mbox{\hyperlink{group__Tags_ga88e0f89c109ed5d0d80840a3d53b8fd5}{TagType}} \mbox{\hyperlink{classnbtcc_1_1BaseTag_ae825c58855e5addad51504c323dcf775}{GetType}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classnbtcc_1_1BaseTag_af6ed66749a3fba624daece43041e93fb}{\_type}}; \}}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{154   \textcolor{keyword}{inline} \textcolor{keyword}{const} std::string\& \mbox{\hyperlink{classnbtcc_1_1BaseTag_ad79f22b86e994573e4f8fada911a6443}{GetName}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classnbtcc_1_1BaseTag_a66f50acc715915750a7062706168174a}{\_name}}; \}}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{160   \textcolor{keyword}{inline} \textcolor{keyword}{const} std::string\& \mbox{\hyperlink{classnbtcc_1_1BaseTag_a2fd103f1a9343a7ff4febe95e8950013}{GetId}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classnbtcc_1_1BaseTag_a66f50acc715915750a7062706168174a}{\_name}}; \}}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{166   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classnbtcc_1_1BaseTag_a645ac5654e8b37a71cff742ad98e662c}{SetName}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{classnbtcc_1_1BaseTag_aa15af8b6592547494c3383478cd40d2a}{name}}) \{ \mbox{\hyperlink{classnbtcc_1_1BaseTag_a66f50acc715915750a7062706168174a}{\_name}} = \mbox{\hyperlink{classnbtcc_1_1BaseTag_aa15af8b6592547494c3383478cd40d2a}{name}}; \}}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{172   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classnbtcc_1_1BaseTag_a9f22acf9a8f2dc4af86cae468b90b4eb}{SetId}}(\textcolor{keyword}{const} std::string\& \textcolor{keywordtype}{id}) \{ \mbox{\hyperlink{classnbtcc_1_1BaseTag_a66f50acc715915750a7062706168174a}{\_name}} = \mbox{\hyperlink{classnbtcc_1_1BaseTag_a17cd2891ce53fc93d665ffa26e2807c6}{id}}; \}}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{178   \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classnbtcc_1_1BaseTag_a4c20e113ffed0d5e6fcf28ccf1abec27}{GetChildCount}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classnbtcc_1_1BaseTag_a2fa312ac3ab0a065186b27b63dcff41f}{count}}(); \}}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{188   \textcolor{keyword}{virtual} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classnbtcc_1_1BaseTag_a959492a313febb8702aa7d24d6124d9d}{WriteToBuffer}}(\textcolor{keywordtype}{char}* buffer,}
+\DoxyCodeLine{189                                \textcolor{keywordtype}{size\_t} length,}
+\DoxyCodeLine{190                                \textcolor{keywordtype}{size\_t} offset) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{196   \textcolor{keyword}{virtual} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classnbtcc_1_1BaseTag_ae26524333cc16babfa76d73c6d61ce1d}{CalculateSize}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{197 }
+\DoxyCodeLine{198  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{206   \textcolor{keyword}{virtual} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classnbtcc_1_1BaseTag_ab93f0ad2dd5bcedbb54a96fdb5d7e6db}{ReadBodyFromBuffer}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* buffer,}
+\DoxyCodeLine{207                                     \textcolor{keywordtype}{size\_t} length,}
+\DoxyCodeLine{208                                     \textcolor{keywordtype}{size\_t} offset) = 0;}
+\DoxyCodeLine{216   \textcolor{keyword}{virtual} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classnbtcc_1_1BaseTag_adf38911288ac148579d64704469a224b}{ReadNameFromBuffer}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* buffer,}
+\DoxyCodeLine{217                                     \textcolor{keywordtype}{size\_t} length,}
+\DoxyCodeLine{218                                     \textcolor{keywordtype}{size\_t} offset);}
+\DoxyCodeLine{219 }
+\DoxyCodeLine{220  \textcolor{keyword}{public}:}
+\DoxyCodeLine{224   \textcolor{keyword}{static} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classnbtcc_1_1BaseTag_aa211f661a7c3831acdee60d644539849}{read\_level}};}
+\DoxyCodeLine{225 }
+\DoxyCodeLine{226  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{227   \mbox{\hyperlink{group__Tags_ga88e0f89c109ed5d0d80840a3d53b8fd5}{TagType}} \mbox{\hyperlink{classnbtcc_1_1BaseTag_af6ed66749a3fba624daece43041e93fb}{\_type}};      }
+\DoxyCodeLine{228   std::string \mbox{\hyperlink{classnbtcc_1_1BaseTag_a66f50acc715915750a7062706168174a}{\_name}};  }
+\DoxyCodeLine{229   \mbox{\hyperlink{classnbtcc_1_1TagValue}{TagValue}} \mbox{\hyperlink{classnbtcc_1_1BaseTag_ae8618c8fbedc773027cf32ca12a5e3e5}{\_value}};    }
+\DoxyCodeLine{230 \};}
+\DoxyCodeLine{231 }
+\DoxyCodeLine{243 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, TagType TAG\_ENUM>}
+\DoxyCodeLine{244 \textcolor{keyword}{class }\mbox{\hyperlink{classnbtcc_1_1____TagMetaType____}{\_\_TagMetaType\_\_}} : \textcolor{keyword}{public} \mbox{\hyperlink{classnbtcc_1_1BaseTag}{BaseTag}} \{}
+\DoxyCodeLine{245  \textcolor{keyword}{public}:}
+\DoxyCodeLine{250   \textcolor{keyword}{inline} T \mbox{\hyperlink{classnbtcc_1_1____TagMetaType_____a9ca76b0ba77bab86a873a639d0c3f096}{GetValue}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{251     \textcolor{keywordflow}{return} *\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }T*\textcolor{keyword}{>}(\mbox{\hyperlink{classnbtcc_1_1BaseTag_ae8618c8fbedc773027cf32ca12a5e3e5}{\_value}}.\mbox{\hyperlink{classnbtcc_1_1TagValue_ae85268b8acecb49e9a2635a0cdaf4cc2}{raw\_value\_ptr}}());}
+\DoxyCodeLine{252   \}}
+\DoxyCodeLine{253 }
+\DoxyCodeLine{258   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classnbtcc_1_1____TagMetaType_____a3253aae1784919431a8d7fb821ddc295}{SetValue}}(\textcolor{keyword}{const} T\& value) \{}
+\DoxyCodeLine{259     *\textcolor{keyword}{reinterpret\_cast<}T*\textcolor{keyword}{>}(\mbox{\hyperlink{classnbtcc_1_1BaseTag_ae8618c8fbedc773027cf32ca12a5e3e5}{\_value}}.\mbox{\hyperlink{classnbtcc_1_1TagValue_ae85268b8acecb49e9a2635a0cdaf4cc2}{raw\_value\_ptr}}()) = value;}
+\DoxyCodeLine{260   \}}
+\DoxyCodeLine{261 }
+\DoxyCodeLine{262  \textcolor{keyword}{public}:}
+\DoxyCodeLine{266   \textcolor{keyword}{inline} \mbox{\hyperlink{classnbtcc_1_1____TagMetaType_____a6e08f3ebf077a3d256bb0a5dbe221359}{\_\_TagMetaType\_\_}}() : \mbox{\hyperlink{classnbtcc_1_1BaseTag}{BaseTag}}(TAG\_ENUM) \{\}}
+\DoxyCodeLine{267 }
+\DoxyCodeLine{272   \textcolor{keyword}{inline} \textcolor{keyword}{explicit} \mbox{\hyperlink{classnbtcc_1_1____TagMetaType_____aa8c83068ebe1a4019c55e5e9ecdac537}{\_\_TagMetaType\_\_}}(\textcolor{keyword}{const} T value) : \mbox{\hyperlink{classnbtcc_1_1BaseTag}{BaseTag}}(TAG\_ENUM) \{}
+\DoxyCodeLine{273     memcpy(\mbox{\hyperlink{classnbtcc_1_1BaseTag_ae8618c8fbedc773027cf32ca12a5e3e5}{\_value}}.\mbox{\hyperlink{classnbtcc_1_1TagValue_ae85268b8acecb49e9a2635a0cdaf4cc2}{raw\_value\_ptr}}(), \&value, \textcolor{keyword}{sizeof}(T));}
+\DoxyCodeLine{274   \}}
+\DoxyCodeLine{275 }
+\DoxyCodeLine{279   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classnbtcc_1_1____TagMetaType_____a004734c278ad0ea1f8a918bc38dc607f}{\string~\_\_TagMetaType\_\_}}() \{\}}
+\DoxyCodeLine{280 }
+\DoxyCodeLine{281   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classnbtcc_1_1____TagMetaType_____abd75847817cbb071e879919a803e5204}{CalculateSize}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \textcolor{keyword}{sizeof}(T); \}}
+\DoxyCodeLine{282 }
+\DoxyCodeLine{283   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classnbtcc_1_1____TagMetaType_____a5b2f6ff0d3c91ad851c6ba38ed50afce}{WriteToBuffer}}(\textcolor{keywordtype}{char}* buffer,}
+\DoxyCodeLine{284                                       \textcolor{keywordtype}{size\_t} length,}
+\DoxyCodeLine{285                                       \textcolor{keywordtype}{size\_t} offset)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{286     \textcolor{keywordflow}{if} (offset + \textcolor{keyword}{sizeof}(T) > length) \{}
+\DoxyCodeLine{287       \textcolor{keywordflow}{return} \mbox{\hyperlink{group__Constants_ga087c0c9b24acf33c1b03e7a1bc3f2214}{NBTCC\_WRITE\_ERROR}};}
+\DoxyCodeLine{288     \}}
+\DoxyCodeLine{289 }
+\DoxyCodeLine{290     T value = *\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }T*\textcolor{keyword}{>}(\mbox{\hyperlink{classnbtcc_1_1BaseTag_ae8618c8fbedc773027cf32ca12a5e3e5}{\_value}}.\mbox{\hyperlink{classnbtcc_1_1TagValue_ae85268b8acecb49e9a2635a0cdaf4cc2}{raw\_value\_ptr}}());}
+\DoxyCodeLine{291     \textcolor{keywordflow}{if} (\textcolor{keyword}{sizeof}(T) == 2) \{}
+\DoxyCodeLine{292       *\textcolor{keyword}{reinterpret\_cast<}uint16\_t*\textcolor{keyword}{>}(\&value) =}
+\DoxyCodeLine{293           htobe16(*\textcolor{keyword}{reinterpret\_cast<}uint16\_t*\textcolor{keyword}{>}(\&value));}
+\DoxyCodeLine{294     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\textcolor{keyword}{sizeof}(T) == 4) \{}
+\DoxyCodeLine{295       *\textcolor{keyword}{reinterpret\_cast<}uint32\_t*\textcolor{keyword}{>}(\&value) =}
+\DoxyCodeLine{296           htobe32(*\textcolor{keyword}{reinterpret\_cast<}uint32\_t*\textcolor{keyword}{>}(\&value));}
+\DoxyCodeLine{297     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\textcolor{keyword}{sizeof}(T) == 8) \{}
+\DoxyCodeLine{298       *\textcolor{keyword}{reinterpret\_cast<}uint64\_t*\textcolor{keyword}{>}(\&value) =}
+\DoxyCodeLine{299           htobe64(*\textcolor{keyword}{reinterpret\_cast<}uint64\_t*\textcolor{keyword}{>}(\&value));}
+\DoxyCodeLine{300     \}}
+\DoxyCodeLine{301 }
+\DoxyCodeLine{302     memcpy(buffer + offset, \&value, \textcolor{keyword}{sizeof}(T));}
+\DoxyCodeLine{303     \textcolor{keywordflow}{return} \textcolor{keyword}{sizeof}(T);}
+\DoxyCodeLine{304   \}}
+\DoxyCodeLine{305 }
+\DoxyCodeLine{306  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{307   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classnbtcc_1_1____TagMetaType_____aeec520f7b653f1156cbe47f08234c6a2}{ReadBodyFromBuffer}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* buffer,}
+\DoxyCodeLine{308                                            \textcolor{keywordtype}{size\_t} length,}
+\DoxyCodeLine{309                                            \textcolor{keywordtype}{size\_t} offset) \{}
+\DoxyCodeLine{310     \textcolor{keywordflow}{if} (offset + \textcolor{keyword}{sizeof}(T) > length) \{}
+\DoxyCodeLine{311       \textcolor{keywordflow}{return} \mbox{\hyperlink{group__Constants_ga61d070a9afd3491ae8982e19c3be4bd9}{NBTCC\_READ\_ERROR}};}
+\DoxyCodeLine{312     \}}
+\DoxyCodeLine{313 }
+\DoxyCodeLine{314     memcpy(\mbox{\hyperlink{classnbtcc_1_1BaseTag_ae8618c8fbedc773027cf32ca12a5e3e5}{\_value}}.\mbox{\hyperlink{classnbtcc_1_1TagValue_ae85268b8acecb49e9a2635a0cdaf4cc2}{raw\_value\_ptr}}(), buffer + offset, \textcolor{keyword}{sizeof}(T));}
+\DoxyCodeLine{315     \textcolor{keywordflow}{if} (\textcolor{keyword}{sizeof}(T) == 2) \{}
+\DoxyCodeLine{316       *\textcolor{keyword}{reinterpret\_cast<}uint16\_t*\textcolor{keyword}{>}(\mbox{\hyperlink{classnbtcc_1_1BaseTag_ae8618c8fbedc773027cf32ca12a5e3e5}{\_value}}.\mbox{\hyperlink{classnbtcc_1_1TagValue_ae85268b8acecb49e9a2635a0cdaf4cc2}{raw\_value\_ptr}}()) =}
+\DoxyCodeLine{317           be16toh(*\textcolor{keyword}{reinterpret\_cast<}uint16\_t*\textcolor{keyword}{>}(\mbox{\hyperlink{classnbtcc_1_1BaseTag_ae8618c8fbedc773027cf32ca12a5e3e5}{\_value}}.\mbox{\hyperlink{classnbtcc_1_1TagValue_ae85268b8acecb49e9a2635a0cdaf4cc2}{raw\_value\_ptr}}()));}
+\DoxyCodeLine{318     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\textcolor{keyword}{sizeof}(T) == 4) \{}
+\DoxyCodeLine{319       *\textcolor{keyword}{reinterpret\_cast<}uint32\_t*\textcolor{keyword}{>}(\mbox{\hyperlink{classnbtcc_1_1BaseTag_ae8618c8fbedc773027cf32ca12a5e3e5}{\_value}}.\mbox{\hyperlink{classnbtcc_1_1TagValue_ae85268b8acecb49e9a2635a0cdaf4cc2}{raw\_value\_ptr}}()) =}
+\DoxyCodeLine{320           be32toh(*\textcolor{keyword}{reinterpret\_cast<}uint32\_t*\textcolor{keyword}{>}(\mbox{\hyperlink{classnbtcc_1_1BaseTag_ae8618c8fbedc773027cf32ca12a5e3e5}{\_value}}.\mbox{\hyperlink{classnbtcc_1_1TagValue_ae85268b8acecb49e9a2635a0cdaf4cc2}{raw\_value\_ptr}}()));}
+\DoxyCodeLine{321     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\textcolor{keyword}{sizeof}(T) == 8) \{}
+\DoxyCodeLine{322       *\textcolor{keyword}{reinterpret\_cast<}uint64\_t*\textcolor{keyword}{>}(\mbox{\hyperlink{classnbtcc_1_1BaseTag_ae8618c8fbedc773027cf32ca12a5e3e5}{\_value}}.\mbox{\hyperlink{classnbtcc_1_1TagValue_ae85268b8acecb49e9a2635a0cdaf4cc2}{raw\_value\_ptr}}()) =}
+\DoxyCodeLine{323           be64toh(*\textcolor{keyword}{reinterpret\_cast<}uint64\_t*\textcolor{keyword}{>}(\mbox{\hyperlink{classnbtcc_1_1BaseTag_ae8618c8fbedc773027cf32ca12a5e3e5}{\_value}}.\mbox{\hyperlink{classnbtcc_1_1TagValue_ae85268b8acecb49e9a2635a0cdaf4cc2}{raw\_value\_ptr}}()));}
+\DoxyCodeLine{324     \}}
+\DoxyCodeLine{325 }
+\DoxyCodeLine{326     \textcolor{keywordflow}{return} \textcolor{keyword}{sizeof}(T);}
+\DoxyCodeLine{327   \}}
+\DoxyCodeLine{328 \};}
+\DoxyCodeLine{329 }
+\DoxyCodeLine{336 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, TagType TAG\_ENUM>}
+\DoxyCodeLine{337 \textcolor{keyword}{class }\mbox{\hyperlink{classnbtcc_1_1____TagMetaArrayType____}{\_\_TagMetaArrayType\_\_}} : \textcolor{keyword}{public} \mbox{\hyperlink{classnbtcc_1_1BaseTag}{BaseTag}} \{}
+\DoxyCodeLine{338  \textcolor{keyword}{public}:}
+\DoxyCodeLine{343   \textcolor{keyword}{inline} \textcolor{keyword}{const} std::vector<T>\& \mbox{\hyperlink{classnbtcc_1_1____TagMetaArrayType_____a64a65025ced47da515afbe9988c9271a}{GetValue}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{344     \textcolor{keywordflow}{return} *\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }std::vector<T>*\textcolor{keyword}{>}(\mbox{\hyperlink{classnbtcc_1_1BaseTag_ae8618c8fbedc773027cf32ca12a5e3e5}{\_value}}.\mbox{\hyperlink{classnbtcc_1_1TagValue_ab8377e68e02ebc87b608186ccf43a9cc}{void\_ptr}}());}
+\DoxyCodeLine{345   \}}
+\DoxyCodeLine{346 }
+\DoxyCodeLine{352   \textcolor{keyword}{inline} std::vector<T>\& \mbox{\hyperlink{classnbtcc_1_1____TagMetaArrayType_____a49cd35d6c8c873a4076a451c32d0e629}{GetValue}}() \{}
+\DoxyCodeLine{353     \textcolor{keywordflow}{return} *\textcolor{keyword}{reinterpret\_cast<}std::vector<T>*\textcolor{keyword}{>}(\mbox{\hyperlink{classnbtcc_1_1BaseTag_ae8618c8fbedc773027cf32ca12a5e3e5}{\_value}}.\mbox{\hyperlink{classnbtcc_1_1TagValue_ab8377e68e02ebc87b608186ccf43a9cc}{void\_ptr}}());}
+\DoxyCodeLine{354   \}}
+\DoxyCodeLine{355 }
+\DoxyCodeLine{356  \textcolor{keyword}{public}:}
+\DoxyCodeLine{360   \textcolor{keyword}{inline} \mbox{\hyperlink{classnbtcc_1_1____TagMetaArrayType_____a5d1ffdffa6df155d44e21a1544bf75f3}{\_\_TagMetaArrayType\_\_}}() : \mbox{\hyperlink{classnbtcc_1_1BaseTag}{BaseTag}}(TAG\_ENUM) \{\}}
+\DoxyCodeLine{361 }
+\DoxyCodeLine{365   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \mbox{\hyperlink{classnbtcc_1_1____TagMetaArrayType_____aad8f33447ba9e498da1a8412d80f6053}{\string~\_\_TagMetaArrayType\_\_}}() \{\}}
+\DoxyCodeLine{366 }
+\DoxyCodeLine{367   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classnbtcc_1_1____TagMetaArrayType_____a51bcdcf89a236b636e543604c661f254}{CalculateSize}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{368     \textcolor{keywordflow}{return} \textcolor{keyword}{sizeof}(uint32\_t) + this-\/>\mbox{\hyperlink{classnbtcc_1_1____TagMetaArrayType_____a478a361b9c005f6248681d463675b8d8}{GetVector}}()-\/>size() * \textcolor{keyword}{sizeof}(T);}
+\DoxyCodeLine{369   \}}
+\DoxyCodeLine{370 }
+\DoxyCodeLine{371   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classnbtcc_1_1____TagMetaArrayType_____a05b987dfd0c4a293f41d5d2d5b1385bc}{WriteToBuffer}}(\textcolor{keywordtype}{char}* buffer,}
+\DoxyCodeLine{372                                       \textcolor{keywordtype}{size\_t} length,}
+\DoxyCodeLine{373                                       \textcolor{keywordtype}{size\_t} offset)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{374     \textcolor{keywordflow}{if} (offset + \textcolor{keyword}{sizeof}(uint32\_t) > length) \{}
+\DoxyCodeLine{375       \textcolor{keywordflow}{return} \mbox{\hyperlink{group__Constants_ga087c0c9b24acf33c1b03e7a1bc3f2214}{NBTCC\_WRITE\_ERROR}};}
+\DoxyCodeLine{376     \}}
+\DoxyCodeLine{377 }
+\DoxyCodeLine{378     \textcolor{comment}{// First `sizeof(uint32\_t)` bytes is the size of array.}}
+\DoxyCodeLine{379     \textcolor{keyword}{const} std::vector<T>* array = \mbox{\hyperlink{classnbtcc_1_1____TagMetaArrayType_____a478a361b9c005f6248681d463675b8d8}{GetVector}}();}
+\DoxyCodeLine{380     uint32\_t size = array-\/>size();}
+\DoxyCodeLine{381     uint32\_t size\_be = htobe32(size);}
+\DoxyCodeLine{382     memcpy(buffer + offset, \&size\_be, \textcolor{keyword}{sizeof}(uint32\_t));}
+\DoxyCodeLine{383 }
+\DoxyCodeLine{384     \textcolor{comment}{// Then `sizeof(T) * size` bytes is the array.}}
+\DoxyCodeLine{385     \textcolor{keywordtype}{size\_t} next\_offset = offset + \textcolor{keyword}{sizeof}(uint32\_t);}
+\DoxyCodeLine{386     \textcolor{keywordtype}{size\_t} end\_offset = next\_offset + size * \textcolor{keyword}{sizeof}(T);}
+\DoxyCodeLine{387 }
+\DoxyCodeLine{388     \textcolor{keywordflow}{if} (end\_offset > length) \{}
+\DoxyCodeLine{389       \textcolor{keywordflow}{return} \mbox{\hyperlink{group__Constants_ga087c0c9b24acf33c1b03e7a1bc3f2214}{NBTCC\_WRITE\_ERROR}};}
+\DoxyCodeLine{390     \}}
+\DoxyCodeLine{391 }
+\DoxyCodeLine{392     memcpy(buffer + next\_offset, array-\/>data(), size * \textcolor{keyword}{sizeof}(T));}
+\DoxyCodeLine{393     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{char}* i = buffer + next\_offset; i < buffer + end\_offset;}
+\DoxyCodeLine{394          i += \textcolor{keyword}{sizeof}(T)) \{}
+\DoxyCodeLine{395       \textcolor{keywordflow}{if} (\textcolor{keyword}{sizeof}(T) == 2) \{}
+\DoxyCodeLine{396         *\textcolor{keyword}{reinterpret\_cast<}uint16\_t*\textcolor{keyword}{>}(i) =}
+\DoxyCodeLine{397             be16toh(*\textcolor{keyword}{reinterpret\_cast<}uint16\_t*\textcolor{keyword}{>}(i));}
+\DoxyCodeLine{398       \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\textcolor{keyword}{sizeof}(T) == 4) \{}
+\DoxyCodeLine{399         *\textcolor{keyword}{reinterpret\_cast<}uint32\_t*\textcolor{keyword}{>}(i) =}
+\DoxyCodeLine{400             be32toh(*\textcolor{keyword}{reinterpret\_cast<}uint32\_t*\textcolor{keyword}{>}(i));}
+\DoxyCodeLine{401       \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\textcolor{keyword}{sizeof}(T) == 8) \{}
+\DoxyCodeLine{402         *\textcolor{keyword}{reinterpret\_cast<}uint64\_t*\textcolor{keyword}{>}(i) =}
+\DoxyCodeLine{403             be64toh(*\textcolor{keyword}{reinterpret\_cast<}uint64\_t*\textcolor{keyword}{>}(i));}
+\DoxyCodeLine{404       \}}
+\DoxyCodeLine{405     \}}
+\DoxyCodeLine{406 }
+\DoxyCodeLine{407     \textcolor{keywordflow}{return} size * \textcolor{keyword}{sizeof}(T) + \textcolor{keyword}{sizeof}(uint32\_t);}
+\DoxyCodeLine{408   \}}
+\DoxyCodeLine{409 }
+\DoxyCodeLine{410  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{411   \textcolor{keyword}{virtual} \textcolor{keyword}{inline} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classnbtcc_1_1____TagMetaArrayType_____aeca633a5160a58822c8a7378ed744cd7}{ReadBodyFromBuffer}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* buffer,}
+\DoxyCodeLine{412                                            \textcolor{keywordtype}{size\_t} length,}
+\DoxyCodeLine{413                                            \textcolor{keywordtype}{size\_t} offset) \{}
+\DoxyCodeLine{414     \textcolor{keywordflow}{if} (offset + \textcolor{keyword}{sizeof}(uint32\_t) > length) \{}
+\DoxyCodeLine{415       \textcolor{keywordflow}{return} \mbox{\hyperlink{group__Constants_ga61d070a9afd3491ae8982e19c3be4bd9}{NBTCC\_READ\_ERROR}};}
+\DoxyCodeLine{416     \}}
+\DoxyCodeLine{417 }
+\DoxyCodeLine{418     \textcolor{comment}{// First `sizeof(uint32\_t)` bytes is the size of array.}}
+\DoxyCodeLine{419     \textcolor{keywordtype}{size\_t} array\_size =}
+\DoxyCodeLine{420         be32toh(*\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }uint32\_t*\textcolor{keyword}{>}(buffer + offset));}
+\DoxyCodeLine{421 }
+\DoxyCodeLine{422     \textcolor{comment}{// Then `sizeof(T) * size` bytes is the array.}}
+\DoxyCodeLine{423     \textcolor{keywordtype}{size\_t} next\_offset = offset + \textcolor{keyword}{sizeof}(uint32\_t);}
+\DoxyCodeLine{424     \textcolor{keywordtype}{size\_t} end\_offset = next\_offset + array\_size * \textcolor{keyword}{sizeof}(T);}
+\DoxyCodeLine{425 }
+\DoxyCodeLine{426     \textcolor{keywordflow}{if} (end\_offset > length) \{}
+\DoxyCodeLine{427       \textcolor{keywordflow}{return} \mbox{\hyperlink{group__Constants_ga61d070a9afd3491ae8982e19c3be4bd9}{NBTCC\_READ\_ERROR}};}
+\DoxyCodeLine{428     \}}
+\DoxyCodeLine{429 }
+\DoxyCodeLine{430     std::vector<T>* array = \mbox{\hyperlink{classnbtcc_1_1____TagMetaArrayType_____a478a361b9c005f6248681d463675b8d8}{GetVector}}();}
+\DoxyCodeLine{431     array-\/>resize(array\_size);}
+\DoxyCodeLine{432     T* data = array-\/>data();}
+\DoxyCodeLine{433     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = next\_offset, j = 0; i < end\_offset; i += \textcolor{keyword}{sizeof}(T), j++) \{}
+\DoxyCodeLine{434       \textcolor{keywordflow}{if} (\textcolor{keyword}{sizeof}(T) == 2) \{}
+\DoxyCodeLine{435         *\textcolor{keyword}{reinterpret\_cast<}uint16\_t*\textcolor{keyword}{>}(data + j) =}
+\DoxyCodeLine{436             be16toh(*\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }uint16\_t*\textcolor{keyword}{>}(buffer + i));}
+\DoxyCodeLine{437       \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\textcolor{keyword}{sizeof}(T) == 4) \{}
+\DoxyCodeLine{438         *\textcolor{keyword}{reinterpret\_cast<}uint32\_t*\textcolor{keyword}{>}(data + j) =}
+\DoxyCodeLine{439             be32toh(*\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }uint32\_t*\textcolor{keyword}{>}(buffer + i));}
+\DoxyCodeLine{440       \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\textcolor{keyword}{sizeof}(T) == 8) \{}
+\DoxyCodeLine{441         *\textcolor{keyword}{reinterpret\_cast<}uint64\_t*\textcolor{keyword}{>}(data + j) =}
+\DoxyCodeLine{442             be64toh(*\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }uint64\_t*\textcolor{keyword}{>}(buffer + i));}
+\DoxyCodeLine{443       \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{444         *\textcolor{keyword}{reinterpret\_cast<}uint8\_t*\textcolor{keyword}{>}(data + j) =}
+\DoxyCodeLine{445             *\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }uint8\_t*\textcolor{keyword}{>}(buffer + i);}
+\DoxyCodeLine{446       \}}
+\DoxyCodeLine{447     \}}
+\DoxyCodeLine{448 }
+\DoxyCodeLine{449     \textcolor{keywordflow}{return} \textcolor{keyword}{sizeof}(uint32\_t) + array\_size * \textcolor{keyword}{sizeof}(T);}
+\DoxyCodeLine{450   \}}
+\DoxyCodeLine{451 }
+\DoxyCodeLine{456   std::vector<T>* \mbox{\hyperlink{classnbtcc_1_1____TagMetaArrayType_____a478a361b9c005f6248681d463675b8d8}{GetVector}}() \{}
+\DoxyCodeLine{457     \textcolor{keywordflow}{return} \textcolor{keyword}{reinterpret\_cast<}std::vector<T>*\textcolor{keyword}{>}(\mbox{\hyperlink{classnbtcc_1_1BaseTag_ae8618c8fbedc773027cf32ca12a5e3e5}{\_value}}.\mbox{\hyperlink{classnbtcc_1_1TagValue_ab8377e68e02ebc87b608186ccf43a9cc}{void\_ptr}}());}
+\DoxyCodeLine{458   \}}
+\DoxyCodeLine{459 }
+\DoxyCodeLine{464   \textcolor{keyword}{const} std::vector<T>* \mbox{\hyperlink{classnbtcc_1_1____TagMetaArrayType_____a92690bda9964a295f290ca01718a6265}{GetVector}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{465     \textcolor{keywordflow}{return} \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }std::vector<T>*\textcolor{keyword}{>}(\mbox{\hyperlink{classnbtcc_1_1BaseTag_ae8618c8fbedc773027cf32ca12a5e3e5}{\_value}}.\mbox{\hyperlink{classnbtcc_1_1TagValue_ab8377e68e02ebc87b608186ccf43a9cc}{void\_ptr}}());}
+\DoxyCodeLine{466   \}}
+\DoxyCodeLine{467 \};}
+\DoxyCodeLine{472 \textcolor{preprocessor}{\#pragma GCC diagnostic pop}}
+\DoxyCodeLine{473 }
+\DoxyCodeLine{474 \}  \textcolor{comment}{// namespace nbtcc}}
+\DoxyCodeLine{475 }
+\DoxyCodeLine{476 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// INCLUDE\_BASE\_TAG\_H\_}}
+
+\end{DoxyCode}
