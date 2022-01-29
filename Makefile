@@ -78,14 +78,12 @@ docs: $(INCLUDE_FILES) Doxyfile README.md
 .PHONY: publish-docs
 publish-docs:
 	rm -rf docs
-	cp ./tools/touch_gh-pages_file touch_gh-pages_file
-	cp -R include include.tmp && cp -R assets assets.tmp
+	cp ./tools/touch_gh-pages_file touch_gh-pages_file && cp -R include include.tmp && cp -R assets assets.tmp && \
+		cp LICENSE LICENSE.tmp && cp README.md README.md.tmp && cp Doxyfile Doxyfile.tmp
 	git branch -D gh-pages || echo 0
-	git checkout -b gh-pages
-	git pull origin gh-pages
-	git merge main --no-ff
-	rm -rf docs && rm -rf include && rm -rf assets
-	mv include.tmp include && mv assets.tmp assets
+	git fetch origin gh-pages:gh-pages && git checkout gh-pages
+	rm -rf docs && rm -rf include && rm -rf assets && rm LICENSE && rm README.md && rm Doxyfile
+	mv include.tmp include && mv assets.tmp assets && mv LICENSE.tmp LICENSE && mv README.md.tmp README.md && mv Doxyfile.tmp Doxyfile
 	$(MAKE) docs
 	./touch_gh-pages_file && rm touch_gh-pages_file
 	git rm -rf example || echo 0
@@ -97,9 +95,7 @@ publish-docs:
 	git rm -rf CPPLINT.cfg || echo 0
 	mv docs/html/* docs/ && rm -rf docs/html
 	git add -f docs || echo 0
-	git add include
-	git add seed
-	git add assets
+	git add include && git add seed && git add assets && git add LICENSE && git add README.md && git add Doxyfile
 	git commit -m "Update docs"
 	git push origin gh-pages
 	git checkout main
