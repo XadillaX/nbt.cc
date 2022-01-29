@@ -22,18 +22,5 @@
 
  @licend  The above is the entire license notice for the JavaScript code in this file
 */
-var NAVTREE =
-[
-  [ "nbt.cc", "index.html", [
-    [ "Documentation", "index.html#autotoc_md1", null ],
-    [ "Contributors ✨", "index.html#autotoc_md2", null ]
-  ] ]
-];
-
-var NAVTREEINDEX =
-[
-"index.html"
-];
-
-var SYNCONMSG = 'click to disable panel synchronisation';
-var SYNCOFFMSG = 'click to enable panel synchronisation';
+var menudata={children:[
+{text:"Main Page",url:"index.html"}]}
