@@ -69,3 +69,8 @@ cpplint: .cpplint-stamp
 .cpplint-stamp: $(SRC_FILES) $(SRC_HEADER_FILES) $(INCLUDE_FILES) example/main.cc
 	$(CPPLINT_BIN) $(SRC_FILES) $(SRC_HEADER_FILES) $(INCLUDE_FILES) example/main.cc
 	@touch $@
+
+docs: $(INCLUDE_FILES) Doxyfile README.md
+	rm -rf docs
+	@doxygen Doxyfile
+	@touch docs

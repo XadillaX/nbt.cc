@@ -2,28 +2,110 @@
 #define INCLUDE_TAGS_LIST_H_
 
 #include "base_tag.h"
+#include "nbt_version.h"
 
 namespace nbtcc {
-
+/**
+ * \defgroup Tags
+ * @brief The NBT tags.
+ * @{
+ */
+/**
+ * The list tag. (for TagType::kTagList)
+ * @note All children tags must be of the same type.
+ */
 class TagList : public BaseTag {
  public:
+  /**
+   * Get child via index.
+   * @param index The index.
+   * @return The child. (`nullptr` if index is out of range)
+   */
   const std::shared_ptr<BaseTag> GetChild(size_t index) const;
+
+  /**
+   * Get child via index.
+   * @param index The index.
+   * @return The child. (`nullptr` if index is out of range)
+   */
   std::shared_ptr<BaseTag> GetChild(size_t index);
+
+  /**
+   * Set child via index.
+   * @param index The index.
+   * @param tag The child.
+   * @return `true` if success.
+   */
   bool SetChild(size_t index, std::shared_ptr<BaseTag> tag);
+
+  /**
+   * Remove child via index.
+   * @param index The index.
+   * @return `true` if success.
+   * @note The next children will be moved to the left.
+   */
   bool EraseChild(size_t index);
+
+  /**
+   * Clear all children.
+   */
   void Clear();
 
+  /**
+   * Insert a child at `index`.
+   * @param index The index.
+   * @param tag The child.
+   * @return `true` if success.
+   */
   bool Insert(size_t index, std::shared_ptr<BaseTag> tag);
+
+  /**
+   * Push a child to the end.
+   * @param tag The child.
+   * @return `true` if success.
+   * @note This is an alias of `Insert(count() - 1, std::shared_ptr<BaseTag>)`.
+   */
   bool PushBack(std::shared_ptr<BaseTag> tag);
+
+  /**
+   * Pop a child from the end.
+   * @return `true` if success.
+   * @note This is an alias of `EraseChild(count() - 1)`.
+   */
   bool PopBack();
+
+  /**
+   * Push a child to the front.
+   * @param tag The child.
+   * @return `true` if success.
+   * @note This is the same as `Insert(0, tag)`.
+   */
   bool PushFront(std::shared_ptr<BaseTag> tag);
+
+  /**
+   * Pop a child from the front.
+   * @return `true` if success.
+   * @note This is the same as `Erase(0)`.
+   */
   bool PopFront();
 
  public:
+  /**
+   * Constructor of the list tag.
+   */
   inline TagList()
       : BaseTag(TagType::kTagList), _child_type(TagType::kTagEnd) {}
+
+  /**
+   * Constructor of the list tag.
+   * @param child_type The child type.
+   */
   explicit inline TagList(TagType child_type)
       : BaseTag(TagType::kTagList), _child_type(child_type) {}
+
+  /**
+   * Destructor of the list tag.
+   */
   virtual inline ~TagList() {}
 
   virtual inline size_t CalculateSize() const {
@@ -77,6 +159,9 @@ class TagList : public BaseTag {
     return total_size;
   }
 
+  /**
+   * Get the child type.
+   */
   inline TagType child_type() const { return _child_type; }
 
  protected:
@@ -122,6 +207,14 @@ class TagList : public BaseTag {
     return size;
   }
 
+  /**
+   * Read the next child tag from a buffer.
+   * @param buffer The buffer.
+   * @param length The length of the buffer.
+   * @param offset The offset of the buffer.
+   * @param idx The index of the child tag.
+   * @return The size of read.
+   */
   size_t ReadNextTag(const char* buffer,
                      size_t length,
                      size_t offset,
@@ -130,7 +223,9 @@ class TagList : public BaseTag {
  private:
   TagType _child_type;
 };
-
+/**
+ * @}
+ */
 }  // namespace nbtcc
 
 #endif  // INCLUDE_TAGS_LIST_H_

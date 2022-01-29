@@ -2,18 +2,51 @@
 #define INCLUDE_TAGS_STRING_H_
 
 #include "base_tag.h"
+#include "nbt_version.h"
 
 namespace nbtcc {
-
+/**
+ * \defgroup Tags
+ * @brief The NBT tags.
+ * @{
+ */
+/**
+ * The string tag. (for TagType::kTagString)
+ */
 class TagString : public BaseTag {
  public:
+  /**
+   * Get the string value of the tag.
+   * @return The string value.
+   */
   inline std::string ToString() const { return _value.StringValue(); }
+
+  /**
+   * Set the string value of the tag.
+   * @param value The string value.
+   */
   inline void SetString(const std::string& value) {
     _value.SetStringValue(value);
   }
 
  public:
+  /**
+   * The constructor of the tag.
+   */
   inline TagString() : BaseTag(TagType::kTagString) {}
+
+  /**
+   * The constructor of the tag.
+   * @param value The string value.
+   */
+  explicit inline TagString(const std::string& value)
+      : BaseTag(TagType::kTagString) {
+    _value.SetStringValue(value);
+  }
+
+  /**
+   * The destructor of the tag.
+   */
   virtual inline ~TagString() {}
 
   virtual inline size_t CalculateSize() const {
@@ -66,7 +99,9 @@ class TagString : public BaseTag {
     return sizeof(uint16_t) + sizeof(char) * length_value;
   }
 };
-
+/**
+ * @}
+ */
 }  // namespace nbtcc
 
 #endif  // INCLUDE_TAGS_STRING_H_

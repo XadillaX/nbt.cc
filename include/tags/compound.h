@@ -2,23 +2,78 @@
 #define INCLUDE_TAGS_COMPOUND_H_
 
 #include "base_tag.h"
+#include "nbt_version.h"
 
 namespace nbtcc {
-
+/**
+ * \defgroup Tags
+ * @brief The NBT tags.
+ * @{
+ */
+/**
+ * The compound tag. (for TagType::kTagCompound)
+ */
 class TagCompound : public BaseTag {
  public:
+  /**
+   * Get child tag by name.
+   * @param name The name of the child tag.
+   * @return The child tag. (`nullptr` if not found)
+   */
   const std::shared_ptr<BaseTag> GetChild(const std::string& key) const;
+
+  /**
+   * Get child tag by name.
+   * @param name The name of the child tag.
+   * @return The child tag. (`nullptr` if not found)
+   */
   std::shared_ptr<BaseTag> GetChild(const std::string& key);
+
+  /**
+   * Get child tag by name.
+   * @param name The name of the child tag.
+   * @param tag The child tag.
+   * @param overwrite If `true`, overwrite the child tag if it exists.
+   * @return `true` if the child tag is set.
+   */
   bool SetChild(const std::string& key,
                 std::shared_ptr<BaseTag> tag,
                 bool overwrite = false);
+
+  /**
+   * Check if the child tag exists.
+   * @param name The name of the child tag.
+   * @return `true` if the child tag exists.
+   */
   bool HasChild(const std::string& key) const;
+
+  /**
+   * Remove the child tag.
+   * @param name The name of the child tag.
+   * @return `true` if the child tag is removed.
+   */
   bool EraseChild(const std::string& key);
+
+  /**
+   * Get all children's names.
+   * @param vec The `vector` to store the names.
+   */
   void GetChildKeys(std::vector<std::string>* vec) const;
+
+  /**
+   * Clear all children.
+   */
   void Clear();
 
  public:
+  /**
+   * The constructor of the compound tag.
+   */
   inline TagCompound() : BaseTag(TagType::kTagCompound) {}
+
+  /**
+   * The destructor of the compound tag.
+   */
   virtual inline ~TagCompound() {}
 
   virtual inline size_t CalculateSize() const {
@@ -97,7 +152,9 @@ class TagCompound : public BaseTag {
  private:
   size_t ReadNextTag(const char* buffer, size_t length, size_t offset);
 };
-
+/**
+ * @}
+ */
 }  // namespace nbtcc
 
 #endif  // INCLUDE_TAGS_COMPOUND_H_

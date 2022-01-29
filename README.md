@@ -1,5 +1,5 @@
 # NBT.cc
 
-Minecraft NBT format parser and modifier.
+![Logo](./assets/logo.png)
 
-> Under developing.
+Minecraft NBT format parser and modifier.
