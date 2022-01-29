@@ -6,7 +6,7 @@ Minecraft NBT format parser and modifier.
 
 ## Documentation
 
-See [https://xadillax.github.io/nbt.cc/].
+See https://xadillax.github.io/nbt.cc/.
 
 ## Contribution
 
