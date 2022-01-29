@@ -96,3 +96,4 @@ publish-docs:
 	git add seed
 	git commit -m "Update docs"
 	git push origin gh-pages
+	git checkout main
