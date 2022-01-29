@@ -13,7 +13,7 @@ bool NBT::Load(const char* buffer, size_t size) {
       return false;
     }
 
-    offset = value.length;
+    offset += value.length;
     _root[value.tag->name()] = value.tag;
   }
 
@@ -28,6 +28,7 @@ NBT::ReturnedTag NBT::GetNextTag(const char* buffer,
   }
 
   uint8_t maybe_type = *(buffer + offset);
+  PrintDebug("↓ Found tag of type %d at offset %zu ↓\n", maybe_type, offset);
   if (maybe_type >= TagType::kTagMax) {
     return {nullptr, 0};
   }
@@ -64,6 +65,10 @@ NBT::ReturnedTag NBT::GetNextTag(const char* buffer,
     return {nullptr, 0};
   }
 
+  PrintDebug("↑ Read tag of type %d at offset %zu with size %zu ↑\n",
+             type,
+             offset,
+             read);
   return {tag, read};
 }
 
