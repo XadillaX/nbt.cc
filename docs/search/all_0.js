@@ -1,4 +1,29 @@
 var searchData=
 [
-  ['nbt_2ecc_0',['NBT.cc',['../index.html',1,'']]]
+  ['_5f_5ftagmetaarraytype_5f_5f_0',['__TagMetaArrayType__',['../classnbtcc_1_1____TagMetaArrayType____.html#a5d1ffdffa6df155d44e21a1544bf75f3',1,'nbtcc::__TagMetaArrayType__::__TagMetaArrayType__()'],['../classnbtcc_1_1____TagMetaArrayType____.html',1,'nbtcc::__TagMetaArrayType__&lt; T, TAG_ENUM &gt;']]],
+  ['_5f_5ftagmetaarraytype_5f_5f_3c_20int32_5ft_2c_20tagtype_3a_3aktagintarray_20_3e_1',['__TagMetaArrayType__&lt; int32_t, TagType::kTagIntArray &gt;',['../classnbtcc_1_1____TagMetaArrayType____.html',1,'nbtcc']]],
+  ['_5f_5ftagmetaarraytype_5f_5f_3c_20int8_5ft_2c_20tagtype_3a_3aktagbytearray_20_3e_2',['__TagMetaArrayType__&lt; int8_t, TagType::kTagByteArray &gt;',['../classnbtcc_1_1____TagMetaArrayType____.html',1,'nbtcc']]],
+  ['_5f_5ftagmetatype_5f_5f_3',['__TagMetaType__',['../classnbtcc_1_1____TagMetaType____.html#a6e08f3ebf077a3d256bb0a5dbe221359',1,'nbtcc::__TagMetaType__::__TagMetaType__()'],['../classnbtcc_1_1____TagMetaType____.html#aa8c83068ebe1a4019c55e5e9ecdac537',1,'nbtcc::__TagMetaType__::__TagMetaType__(const T value)'],['../classnbtcc_1_1____TagMetaType____.html',1,'nbtcc::__TagMetaType__&lt; T, TAG_ENUM &gt;']]],
+  ['_5f_5ftagmetatype_5f_5f_3c_20double_2c_20tagtype_3a_3aktagdouble_20_3e_4',['__TagMetaType__&lt; double, TagType::kTagDouble &gt;',['../classnbtcc_1_1____TagMetaType____.html',1,'nbtcc']]],
+  ['_5f_5ftagmetatype_5f_5f_3c_20float_2c_20tagtype_3a_3aktagfloat_20_3e_5',['__TagMetaType__&lt; float, TagType::kTagFloat &gt;',['../classnbtcc_1_1____TagMetaType____.html',1,'nbtcc']]],
+  ['_5f_5ftagmetatype_5f_5f_3c_20int16_5ft_2c_20tagtype_3a_3aktagshort_20_3e_6',['__TagMetaType__&lt; int16_t, TagType::kTagShort &gt;',['../classnbtcc_1_1____TagMetaType____.html',1,'nbtcc']]],
+  ['_5f_5ftagmetatype_5f_5f_3c_20int32_5ft_2c_20tagtype_3a_3aktagint_20_3e_7',['__TagMetaType__&lt; int32_t, TagType::kTagInt &gt;',['../classnbtcc_1_1____TagMetaType____.html',1,'nbtcc']]],
+  ['_5f_5ftagmetatype_5f_5f_3c_20int64_5ft_2c_20tagtype_3a_3aktaglong_20_3e_8',['__TagMetaType__&lt; int64_t, TagType::kTagLong &gt;',['../classnbtcc_1_1____TagMetaType____.html',1,'nbtcc']]],
+  ['_5f_5ftagmetatype_5f_5f_3c_20int8_5ft_2c_20tagtype_3a_3aktagbyte_20_3e_9',['__TagMetaType__&lt; int8_t, TagType::kTagByte &gt;',['../classnbtcc_1_1____TagMetaType____.html',1,'nbtcc']]],
+  ['_5f_5fvalue_5f_5f_10',['__value__',['../classnbtcc_1_1BaseTag.html#a919f092e704e35b82fafe85cc2a5c877',1,'nbtcc::BaseTag::__value__()'],['../classnbtcc_1_1BaseTag.html#a3b8509e202fafc61cba6d8a7158d02e9',1,'nbtcc::BaseTag::__value__() const']]],
+  ['_5fbyte_11',['_byte',['../unionnbtcc_1_1TagValueUnion.html#a8922ca9fba1ed4a926028810079a4529',1,'nbtcc::TagValueUnion']]],
+  ['_5fbyte_5farray_12',['_byte_array',['../unionnbtcc_1_1TagValueUnion.html#a8eca2041b169602c6d0360e559e15b23',1,'nbtcc::TagValueUnion']]],
+  ['_5fcompound_13',['_compound',['../unionnbtcc_1_1TagValueUnion.html#a85e161112d1c00a9f0f2baaeebdead08',1,'nbtcc::TagValueUnion']]],
+  ['_5fdouble_14',['_double',['../unionnbtcc_1_1TagValueUnion.html#ac295839f879d5e7cc594a9971a334287',1,'nbtcc::TagValueUnion']]],
+  ['_5ffloat_15',['_float',['../unionnbtcc_1_1TagValueUnion.html#a3b2e5a4e6e2a465fa227e7221e79b39c',1,'nbtcc::TagValueUnion']]],
+  ['_5fint_16',['_int',['../unionnbtcc_1_1TagValueUnion.html#a1b724b5eb58c868521c48d7afdea062e',1,'nbtcc::TagValueUnion']]],
+  ['_5fint_5farray_17',['_int_array',['../unionnbtcc_1_1TagValueUnion.html#a497198261268cd0853bee15a7e30e5d7',1,'nbtcc::TagValueUnion']]],
+  ['_5flist_18',['_list',['../unionnbtcc_1_1TagValueUnion.html#a2d9532ce8b491e1c36f75c4fa4a559d1',1,'nbtcc::TagValueUnion']]],
+  ['_5flong_19',['_long',['../unionnbtcc_1_1TagValueUnion.html#a1f42d01d5c94c53e44f9f6452397e8ae',1,'nbtcc::TagValueUnion']]],
+  ['_5fname_20',['_name',['../classnbtcc_1_1BaseTag.html#a66f50acc715915750a7062706168174a',1,'nbtcc::BaseTag']]],
+  ['_5fptr_21',['_ptr',['../unionnbtcc_1_1TagValueUnion.html#a2ea899d4f6489712f56d049e032611b9',1,'nbtcc::TagValueUnion']]],
+  ['_5fshort_22',['_short',['../unionnbtcc_1_1TagValueUnion.html#acb5aabea2492c616eb57ca0c9e9e2704',1,'nbtcc::TagValueUnion']]],
+  ['_5fstring_23',['_string',['../unionnbtcc_1_1TagValueUnion.html#ab056c4218755c29cb25f35a7ab9abc4f',1,'nbtcc::TagValueUnion']]],
+  ['_5ftype_24',['_type',['../classnbtcc_1_1BaseTag.html#af6ed66749a3fba624daece43041e93fb',1,'nbtcc::BaseTag']]],
+  ['_5fvalue_25',['_value',['../classnbtcc_1_1BaseTag.html#ae8618c8fbedc773027cf32ca12a5e3e5',1,'nbtcc::BaseTag']]]
 ];

@@ -1,0 +1,24 @@
+<map id="nbtcc::BaseTag" name="nbtcc::BaseTag">
+<area shape="rect" id="node1" title=" " alt="" coords="5,458,119,485"/>
+<area shape="rect" id="node2" href="$classnbtcc_1_1____TagMetaArrayType____.html" title=" " alt="" coords="167,5,409,47"/>
+<area shape="rect" id="node4" href="$classnbtcc_1_1____TagMetaArrayType____.html" title=" " alt="" coords="169,71,407,112"/>
+<area shape="rect" id="node6" href="$classnbtcc_1_1____TagMetaType____.html" title=" " alt="" coords="211,137,365,193"/>
+<area shape="rect" id="node8" href="$classnbtcc_1_1____TagMetaType____.html" title=" " alt="" coords="211,217,365,273"/>
+<area shape="rect" id="node10" href="$classnbtcc_1_1____TagMetaType____.html" title=" " alt="" coords="185,297,391,339"/>
+<area shape="rect" id="node12" href="$classnbtcc_1_1____TagMetaType____.html" title=" " alt="" coords="211,363,365,419"/>
+<area shape="rect" id="node14" href="$classnbtcc_1_1____TagMetaType____.html" title=" " alt="" coords="211,443,365,499"/>
+<area shape="rect" id="node16" href="$classnbtcc_1_1____TagMetaType____.html" title=" " alt="" coords="211,523,365,579"/>
+<area shape="rect" id="node18" href="$classnbtcc_1_1TagCompound.html" title=" " alt="" coords="215,603,361,630"/>
+<area shape="rect" id="node19" href="$classnbtcc_1_1TagList.html" title=" " alt="" coords="236,654,340,681"/>
+<area shape="rect" id="node20" href="$classnbtcc_1_1TagString.html" title=" " alt="" coords="229,705,347,731"/>
+<area shape="rect" id="node21" href="$classnbtcc_1_1____TagMetaArrayType____.html" title=" " alt="" coords="195,756,381,797"/>
+<area shape="rect" id="node22" href="$classnbtcc_1_1____TagMetaType____.html" title=" " alt="" coords="211,821,365,863"/>
+<area shape="rect" id="node3" href="$classnbtcc_1_1TagByteArray.html" title=" " alt="" coords="457,13,599,39"/>
+<area shape="rect" id="node5" href="$classnbtcc_1_1TagIntArray.html" title=" " alt="" coords="463,78,593,105"/>
+<area shape="rect" id="node7" href="$classnbtcc_1_1TagByte.html" title=" " alt="" coords="473,151,583,178"/>
+<area shape="rect" id="node9" href="$classnbtcc_1_1TagDouble.html" title=" " alt="" coords="466,231,590,258"/>
+<area shape="rect" id="node11" href="$classnbtcc_1_1TagFloat.html" title=" " alt="" coords="472,305,584,331"/>
+<area shape="rect" id="node13" href="$classnbtcc_1_1TagInt.html" title=" " alt="" coords="479,378,577,405"/>
+<area shape="rect" id="node15" href="$classnbtcc_1_1TagLong.html" title=" " alt="" coords="473,458,583,485"/>
+<area shape="rect" id="node17" href="$classnbtcc_1_1TagShort.html" title=" " alt="" coords="471,538,585,565"/>
+</map>

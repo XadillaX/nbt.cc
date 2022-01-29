@@ -1,0 +1,368 @@
+\hypertarget{classnbtcc_1_1BaseTag}{}\doxysection{nbtcc\+::Base\+Tag Class Reference}
+\label{classnbtcc_1_1BaseTag}\index{nbtcc::BaseTag@{nbtcc::BaseTag}}
+
+
+{\ttfamily \#include $<$base\+\_\+tag.\+h$>$}
+
+
+
+Inheritance diagram for nbtcc\+::Base\+Tag\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnbtcc_1_1BaseTag__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for nbtcc\+::Base\+Tag\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{classnbtcc_1_1BaseTag__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classnbtcc_1_1BaseTag_a11a3d08dee8cf35ea4dd7093cb9edb1f}{Base\+Tag}} (\mbox{\hyperlink{group__Tags_ga88e0f89c109ed5d0d80840a3d53b8fd5}{Tag\+Type}} \mbox{\hyperlink{classnbtcc_1_1BaseTag_a41bcfc53e9f8360d2323482bab34f85e}{type}})
+\item 
+virtual \mbox{\hyperlink{classnbtcc_1_1BaseTag_a0ace0830d0d1e1727c24009fc5d6db05}{$\sim$\+Base\+Tag}} ()
+\item 
+\mbox{\hyperlink{classnbtcc_1_1TagValue}{Tag\+Value}} \& \mbox{\hyperlink{classnbtcc_1_1BaseTag_a919f092e704e35b82fafe85cc2a5c877}{\+\_\+\+\_\+value\+\_\+\+\_\+}} ()
+\item 
+const \mbox{\hyperlink{classnbtcc_1_1TagValue}{Tag\+Value}} \& \mbox{\hyperlink{classnbtcc_1_1BaseTag_a3b8509e202fafc61cba6d8a7158d02e9}{\+\_\+\+\_\+value\+\_\+\+\_\+}} () const
+\item 
+{\footnotesize template$<$typename T $>$ }\\T $\ast$ \mbox{\hyperlink{classnbtcc_1_1BaseTag_a85100262339ed71f1e3cf9eed75417c8}{As\+Ptr}} ()
+\item 
+{\footnotesize template$<$typename T $>$ }\\const T $\ast$ \mbox{\hyperlink{classnbtcc_1_1BaseTag_a5e96de921d0324aec70d4e3b7f50d5c9}{As\+Ptr}} () const
+\item 
+virtual size\+\_\+t \mbox{\hyperlink{classnbtcc_1_1BaseTag_ae26524333cc16babfa76d73c6d61ce1d}{Calculate\+Size}} () const =0
+\item 
+size\+\_\+t \mbox{\hyperlink{classnbtcc_1_1BaseTag_a2fa312ac3ab0a065186b27b63dcff41f}{count}} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{classnbtcc_1_1BaseTag_a4c20e113ffed0d5e6fcf28ccf1abec27}{Get\+Child\+Count}} () const
+\item 
+const std\+::string \& \mbox{\hyperlink{classnbtcc_1_1BaseTag_a2fd103f1a9343a7ff4febe95e8950013}{Get\+Id}} () const
+\item 
+const std\+::string \& \mbox{\hyperlink{classnbtcc_1_1BaseTag_ad79f22b86e994573e4f8fada911a6443}{Get\+Name}} () const
+\item 
+\mbox{\hyperlink{group__Tags_ga88e0f89c109ed5d0d80840a3d53b8fd5}{Tag\+Type}} \mbox{\hyperlink{classnbtcc_1_1BaseTag_ae825c58855e5addad51504c323dcf775}{Get\+Type}} () const
+\item 
+const std\+::string \& \mbox{\hyperlink{classnbtcc_1_1BaseTag_a17cd2891ce53fc93d665ffa26e2807c6}{id}} () const
+\item 
+const std\+::string \& \mbox{\hyperlink{classnbtcc_1_1BaseTag_aa15af8b6592547494c3383478cd40d2a}{name}} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{classnbtcc_1_1BaseTag_a46a9fc585773abdfb3ac0f4c6946a336}{Read\+From\+Buffer}} (const char $\ast$buffer, size\+\_\+t length, size\+\_\+t offset)
+\item 
+void \mbox{\hyperlink{classnbtcc_1_1BaseTag_a6f248ef12443e576ff790486766d9988}{set\+\_\+name}} (const std\+::string \&\mbox{\hyperlink{classnbtcc_1_1BaseTag_aa15af8b6592547494c3383478cd40d2a}{name}})
+\item 
+void \mbox{\hyperlink{classnbtcc_1_1BaseTag_a9f22acf9a8f2dc4af86cae468b90b4eb}{Set\+Id}} (const std\+::string \&\mbox{\hyperlink{classnbtcc_1_1BaseTag_a17cd2891ce53fc93d665ffa26e2807c6}{id}})
+\item 
+void \mbox{\hyperlink{classnbtcc_1_1BaseTag_a645ac5654e8b37a71cff742ad98e662c}{Set\+Name}} (const std\+::string \&\mbox{\hyperlink{classnbtcc_1_1BaseTag_aa15af8b6592547494c3383478cd40d2a}{name}})
+\item 
+\mbox{\hyperlink{group__Tags_ga88e0f89c109ed5d0d80840a3d53b8fd5}{Tag\+Type}} \mbox{\hyperlink{classnbtcc_1_1BaseTag_a41bcfc53e9f8360d2323482bab34f85e}{type}} () const
+\item 
+virtual size\+\_\+t \mbox{\hyperlink{classnbtcc_1_1BaseTag_a959492a313febb8702aa7d24d6124d9d}{Write\+To\+Buffer}} (char $\ast$buffer, size\+\_\+t length, size\+\_\+t offset) const =0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static size\+\_\+t \mbox{\hyperlink{classnbtcc_1_1BaseTag_aa211f661a7c3831acdee60d644539849}{read\+\_\+level}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual size\+\_\+t \mbox{\hyperlink{classnbtcc_1_1BaseTag_ab93f0ad2dd5bcedbb54a96fdb5d7e6db}{Read\+Body\+From\+Buffer}} (const char $\ast$buffer, size\+\_\+t length, size\+\_\+t offset)=0
+\item 
+virtual size\+\_\+t \mbox{\hyperlink{classnbtcc_1_1BaseTag_adf38911288ac148579d64704469a224b}{Read\+Name\+From\+Buffer}} (const char $\ast$buffer, size\+\_\+t length, size\+\_\+t offset)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnbtcc_1_1BaseTag_a66f50acc715915750a7062706168174a}\label{classnbtcc_1_1BaseTag_a66f50acc715915750a7062706168174a}} 
+std\+::string {\bfseries \+\_\+name}
+\begin{DoxyCompactList}\small\item\em The name of the tag. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnbtcc_1_1BaseTag_af6ed66749a3fba624daece43041e93fb}\label{classnbtcc_1_1BaseTag_af6ed66749a3fba624daece43041e93fb}} 
+\mbox{\hyperlink{group__Tags_ga88e0f89c109ed5d0d80840a3d53b8fd5}{Tag\+Type}} {\bfseries \+\_\+type}
+\begin{DoxyCompactList}\small\item\em The type of the tag. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnbtcc_1_1BaseTag_ae8618c8fbedc773027cf32ca12a5e3e5}\label{classnbtcc_1_1BaseTag_ae8618c8fbedc773027cf32ca12a5e3e5}} 
+\mbox{\hyperlink{classnbtcc_1_1TagValue}{Tag\+Value}} {\bfseries \+\_\+value}
+\begin{DoxyCompactList}\small\item\em The underlying value of the tag. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnbtcc_1_1BaseTag_a1297bb68022337a04fdcbde9733c1bde}\label{classnbtcc_1_1BaseTag_a1297bb68022337a04fdcbde9733c1bde}} 
+class {\bfseries Tag\+List}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The base class for all tags. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnbtcc_1_1BaseTag_a11a3d08dee8cf35ea4dd7093cb9edb1f}\label{classnbtcc_1_1BaseTag_a11a3d08dee8cf35ea4dd7093cb9edb1f}} 
+\index{nbtcc::BaseTag@{nbtcc::BaseTag}!BaseTag@{BaseTag}}
+\index{BaseTag@{BaseTag}!nbtcc::BaseTag@{nbtcc::BaseTag}}
+\doxysubsubsection{\texorpdfstring{BaseTag()}{BaseTag()}}
+{\footnotesize\ttfamily nbtcc\+::\+Base\+Tag\+::\+Base\+Tag (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__Tags_ga88e0f89c109ed5d0d80840a3d53b8fd5}{Tag\+Type}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+The constructor for the base tag. 
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of the tag. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnbtcc_1_1BaseTag_a0ace0830d0d1e1727c24009fc5d6db05}\label{classnbtcc_1_1BaseTag_a0ace0830d0d1e1727c24009fc5d6db05}} 
+\index{nbtcc::BaseTag@{nbtcc::BaseTag}!````~BaseTag@{$\sim$BaseTag}}
+\index{````~BaseTag@{$\sim$BaseTag}!nbtcc::BaseTag@{nbtcc::BaseTag}}
+\doxysubsubsection{\texorpdfstring{$\sim$BaseTag()}{~BaseTag()}}
+{\footnotesize\ttfamily virtual nbtcc\+::\+Base\+Tag\+::$\sim$\+Base\+Tag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+The destructor for the base tag. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classnbtcc_1_1BaseTag_a919f092e704e35b82fafe85cc2a5c877}\label{classnbtcc_1_1BaseTag_a919f092e704e35b82fafe85cc2a5c877}} 
+\index{nbtcc::BaseTag@{nbtcc::BaseTag}!\_\_value\_\_@{\_\_value\_\_}}
+\index{\_\_value\_\_@{\_\_value\_\_}!nbtcc::BaseTag@{nbtcc::BaseTag}}
+\doxysubsubsection{\texorpdfstring{\_\_value\_\_()}{\_\_value\_\_()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classnbtcc_1_1TagValue}{Tag\+Value}} \& nbtcc\+::\+Base\+Tag\+::\+\_\+\+\_\+value\+\_\+\+\_\+ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return the underlying value of the tag. ({\bfseries{NOT}} recommended and use this method under your own risk) \begin{DoxyReturn}{Returns}
+The underlying value of the tag. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnbtcc_1_1BaseTag_a3b8509e202fafc61cba6d8a7158d02e9}\label{classnbtcc_1_1BaseTag_a3b8509e202fafc61cba6d8a7158d02e9}} 
+\index{nbtcc::BaseTag@{nbtcc::BaseTag}!\_\_value\_\_@{\_\_value\_\_}}
+\index{\_\_value\_\_@{\_\_value\_\_}!nbtcc::BaseTag@{nbtcc::BaseTag}}
+\doxysubsubsection{\texorpdfstring{\_\_value\_\_()}{\_\_value\_\_()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classnbtcc_1_1TagValue}{Tag\+Value}} \& nbtcc\+::\+Base\+Tag\+::\+\_\+\+\_\+value\+\_\+\+\_\+ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return the underlying value of the tag. ({\bfseries{not}} recommended and use this method under your own risk) \begin{DoxyReturn}{Returns}
+The underlying value of the tag. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnbtcc_1_1BaseTag_a85100262339ed71f1e3cf9eed75417c8}\label{classnbtcc_1_1BaseTag_a85100262339ed71f1e3cf9eed75417c8}} 
+\index{nbtcc::BaseTag@{nbtcc::BaseTag}!AsPtr@{AsPtr}}
+\index{AsPtr@{AsPtr}!nbtcc::BaseTag@{nbtcc::BaseTag}}
+\doxysubsubsection{\texorpdfstring{AsPtr()}{AsPtr()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T $\ast$ nbtcc\+::\+Base\+Tag\+::\+As\+Ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Cast this base tag into a subclass pointer. \begin{DoxyReturn}{Returns}
+The subclass pointer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnbtcc_1_1BaseTag_a5e96de921d0324aec70d4e3b7f50d5c9}\label{classnbtcc_1_1BaseTag_a5e96de921d0324aec70d4e3b7f50d5c9}} 
+\index{nbtcc::BaseTag@{nbtcc::BaseTag}!AsPtr@{AsPtr}}
+\index{AsPtr@{AsPtr}!nbtcc::BaseTag@{nbtcc::BaseTag}}
+\doxysubsubsection{\texorpdfstring{AsPtr()}{AsPtr()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+const T $\ast$ nbtcc\+::\+Base\+Tag\+::\+As\+Ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Cast this base tag into a subclass pointer. \begin{DoxyReturn}{Returns}
+The subclass pointer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnbtcc_1_1BaseTag_ae26524333cc16babfa76d73c6d61ce1d}\label{classnbtcc_1_1BaseTag_ae26524333cc16babfa76d73c6d61ce1d}} 
+\index{nbtcc::BaseTag@{nbtcc::BaseTag}!CalculateSize@{CalculateSize}}
+\index{CalculateSize@{CalculateSize}!nbtcc::BaseTag@{nbtcc::BaseTag}}
+\doxysubsubsection{\texorpdfstring{CalculateSize()}{CalculateSize()}}
+{\footnotesize\ttfamily virtual size\+\_\+t nbtcc\+::\+Base\+Tag\+::\+Calculate\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Calculate the buffer size needed to write this tag. \begin{DoxyReturn}{Returns}
+The buffer size needed to write this tag. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classnbtcc_1_1____TagMetaType_____abd75847817cbb071e879919a803e5204}{nbtcc\+::\+\_\+\+\_\+\+Tag\+Meta\+Type\+\_\+\+\_\+$<$ T, TAG\+\_\+\+ENUM $>$}}, \mbox{\hyperlink{classnbtcc_1_1____TagMetaType_____abd75847817cbb071e879919a803e5204}{nbtcc\+::\+\_\+\+\_\+\+Tag\+Meta\+Type\+\_\+\+\_\+$<$ int8\+\_\+t, Tag\+Type\+::k\+Tag\+Byte $>$}}, \mbox{\hyperlink{classnbtcc_1_1____TagMetaType_____abd75847817cbb071e879919a803e5204}{nbtcc\+::\+\_\+\+\_\+\+Tag\+Meta\+Type\+\_\+\+\_\+$<$ double, Tag\+Type\+::k\+Tag\+Double $>$}}, \mbox{\hyperlink{classnbtcc_1_1____TagMetaType_____abd75847817cbb071e879919a803e5204}{nbtcc\+::\+\_\+\+\_\+\+Tag\+Meta\+Type\+\_\+\+\_\+$<$ float, Tag\+Type\+::k\+Tag\+Float $>$}}, \mbox{\hyperlink{classnbtcc_1_1____TagMetaType_____abd75847817cbb071e879919a803e5204}{nbtcc\+::\+\_\+\+\_\+\+Tag\+Meta\+Type\+\_\+\+\_\+$<$ int32\+\_\+t, Tag\+Type\+::k\+Tag\+Int $>$}}, \mbox{\hyperlink{classnbtcc_1_1____TagMetaType_____abd75847817cbb071e879919a803e5204}{nbtcc\+::\+\_\+\+\_\+\+Tag\+Meta\+Type\+\_\+\+\_\+$<$ int64\+\_\+t, Tag\+Type\+::k\+Tag\+Long $>$}}, \mbox{\hyperlink{classnbtcc_1_1____TagMetaType_____abd75847817cbb071e879919a803e5204}{nbtcc\+::\+\_\+\+\_\+\+Tag\+Meta\+Type\+\_\+\+\_\+$<$ int16\+\_\+t, Tag\+Type\+::k\+Tag\+Short $>$}}, \mbox{\hyperlink{classnbtcc_1_1____TagMetaArrayType_____a51bcdcf89a236b636e543604c661f254}{nbtcc\+::\+\_\+\+\_\+\+Tag\+Meta\+Array\+Type\+\_\+\+\_\+$<$ T, TAG\+\_\+\+ENUM $>$}}, \mbox{\hyperlink{classnbtcc_1_1____TagMetaArrayType_____a51bcdcf89a236b636e543604c661f254}{nbtcc\+::\+\_\+\+\_\+\+Tag\+Meta\+Array\+Type\+\_\+\+\_\+$<$ int8\+\_\+t, Tag\+Type\+::k\+Tag\+Byte\+Array $>$}}, \mbox{\hyperlink{classnbtcc_1_1____TagMetaArrayType_____a51bcdcf89a236b636e543604c661f254}{nbtcc\+::\+\_\+\+\_\+\+Tag\+Meta\+Array\+Type\+\_\+\+\_\+$<$ int32\+\_\+t, Tag\+Type\+::k\+Tag\+Int\+Array $>$}}, \mbox{\hyperlink{classnbtcc_1_1TagCompound_ae9de1f32468c31422d38d0d74c1ceb69}{nbtcc\+::\+Tag\+Compound}}, \mbox{\hyperlink{classnbtcc_1_1TagList_a441f4ff2db5a5ee6b8bbcbb3804a3f91}{nbtcc\+::\+Tag\+List}}, and \mbox{\hyperlink{classnbtcc_1_1TagString_a4772e96cffcb1a9a1a9617d90e0a5fae}{nbtcc\+::\+Tag\+String}}.
+
+\mbox{\Hypertarget{classnbtcc_1_1BaseTag_a2fa312ac3ab0a065186b27b63dcff41f}\label{classnbtcc_1_1BaseTag_a2fa312ac3ab0a065186b27b63dcff41f}} 
+\index{nbtcc::BaseTag@{nbtcc::BaseTag}!count@{count}}
+\index{count@{count}!nbtcc::BaseTag@{nbtcc::BaseTag}}
+\doxysubsubsection{\texorpdfstring{count()}{count()}}
+{\footnotesize\ttfamily size\+\_\+t nbtcc\+::\+Base\+Tag\+::count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Return the children count of the tag. (if any) \mbox{\Hypertarget{classnbtcc_1_1BaseTag_a4c20e113ffed0d5e6fcf28ccf1abec27}\label{classnbtcc_1_1BaseTag_a4c20e113ffed0d5e6fcf28ccf1abec27}} 
+\index{nbtcc::BaseTag@{nbtcc::BaseTag}!GetChildCount@{GetChildCount}}
+\index{GetChildCount@{GetChildCount}!nbtcc::BaseTag@{nbtcc::BaseTag}}
+\doxysubsubsection{\texorpdfstring{GetChildCount()}{GetChildCount()}}
+{\footnotesize\ttfamily size\+\_\+t nbtcc\+::\+Base\+Tag\+::\+Get\+Child\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Alias for {\ttfamily \mbox{\hyperlink{classnbtcc_1_1BaseTag_a2fa312ac3ab0a065186b27b63dcff41f}{count()}}} \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classnbtcc_1_1BaseTag_a2fa312ac3ab0a065186b27b63dcff41f}{count()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classnbtcc_1_1BaseTag_a2fd103f1a9343a7ff4febe95e8950013}\label{classnbtcc_1_1BaseTag_a2fd103f1a9343a7ff4febe95e8950013}} 
+\index{nbtcc::BaseTag@{nbtcc::BaseTag}!GetId@{GetId}}
+\index{GetId@{GetId}!nbtcc::BaseTag@{nbtcc::BaseTag}}
+\doxysubsubsection{\texorpdfstring{GetId()}{GetId()}}
+{\footnotesize\ttfamily const std\+::string \& nbtcc\+::\+Base\+Tag\+::\+Get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Alias for {\ttfamily \mbox{\hyperlink{classnbtcc_1_1BaseTag_aa15af8b6592547494c3383478cd40d2a}{name()}}} \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classnbtcc_1_1BaseTag_aa15af8b6592547494c3383478cd40d2a}{name()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classnbtcc_1_1BaseTag_ad79f22b86e994573e4f8fada911a6443}\label{classnbtcc_1_1BaseTag_ad79f22b86e994573e4f8fada911a6443}} 
+\index{nbtcc::BaseTag@{nbtcc::BaseTag}!GetName@{GetName}}
+\index{GetName@{GetName}!nbtcc::BaseTag@{nbtcc::BaseTag}}
+\doxysubsubsection{\texorpdfstring{GetName()}{GetName()}}
+{\footnotesize\ttfamily const std\+::string \& nbtcc\+::\+Base\+Tag\+::\+Get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Alias for {\ttfamily \mbox{\hyperlink{classnbtcc_1_1BaseTag_aa15af8b6592547494c3383478cd40d2a}{name()}}} \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classnbtcc_1_1BaseTag_aa15af8b6592547494c3383478cd40d2a}{name()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classnbtcc_1_1BaseTag_ae825c58855e5addad51504c323dcf775}\label{classnbtcc_1_1BaseTag_ae825c58855e5addad51504c323dcf775}} 
+\index{nbtcc::BaseTag@{nbtcc::BaseTag}!GetType@{GetType}}
+\index{GetType@{GetType}!nbtcc::BaseTag@{nbtcc::BaseTag}}
+\doxysubsubsection{\texorpdfstring{GetType()}{GetType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__Tags_ga88e0f89c109ed5d0d80840a3d53b8fd5}{Tag\+Type}} nbtcc\+::\+Base\+Tag\+::\+Get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Alias for {\ttfamily \mbox{\hyperlink{classnbtcc_1_1BaseTag_a41bcfc53e9f8360d2323482bab34f85e}{type()}}} \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classnbtcc_1_1BaseTag_a41bcfc53e9f8360d2323482bab34f85e}{type()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classnbtcc_1_1BaseTag_a17cd2891ce53fc93d665ffa26e2807c6}\label{classnbtcc_1_1BaseTag_a17cd2891ce53fc93d665ffa26e2807c6}} 
+\index{nbtcc::BaseTag@{nbtcc::BaseTag}!id@{id}}
+\index{id@{id}!nbtcc::BaseTag@{nbtcc::BaseTag}}
+\doxysubsubsection{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily const std\+::string \& nbtcc\+::\+Base\+Tag\+::id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Alias for {\ttfamily \mbox{\hyperlink{classnbtcc_1_1BaseTag_aa15af8b6592547494c3383478cd40d2a}{name()}}}. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classnbtcc_1_1BaseTag_aa15af8b6592547494c3383478cd40d2a}{name()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classnbtcc_1_1BaseTag_aa15af8b6592547494c3383478cd40d2a}\label{classnbtcc_1_1BaseTag_aa15af8b6592547494c3383478cd40d2a}} 
+\index{nbtcc::BaseTag@{nbtcc::BaseTag}!name@{name}}
+\index{name@{name}!nbtcc::BaseTag@{nbtcc::BaseTag}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily const std\+::string \& nbtcc\+::\+Base\+Tag\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+The name of the tag. \begin{DoxyReturn}{Returns}
+The name of the tag. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnbtcc_1_1BaseTag_ab93f0ad2dd5bcedbb54a96fdb5d7e6db}\label{classnbtcc_1_1BaseTag_ab93f0ad2dd5bcedbb54a96fdb5d7e6db}} 
+\index{nbtcc::BaseTag@{nbtcc::BaseTag}!ReadBodyFromBuffer@{ReadBodyFromBuffer}}
+\index{ReadBodyFromBuffer@{ReadBodyFromBuffer}!nbtcc::BaseTag@{nbtcc::BaseTag}}
+\doxysubsubsection{\texorpdfstring{ReadBodyFromBuffer()}{ReadBodyFromBuffer()}}
+{\footnotesize\ttfamily virtual size\+\_\+t nbtcc\+::\+Base\+Tag\+::\+Read\+Body\+From\+Buffer (\begin{DoxyParamCaption}\item[{const char $\ast$}]{buffer,  }\item[{size\+\_\+t}]{length,  }\item[{size\+\_\+t}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+Read tag body from a buffer. 
+\begin{DoxyParams}{Parameters}
+{\em buffer} & The buffer to read from. \\
+\hline
+{\em length} & The size of the buffer. \\
+\hline
+{\em offset} & The offset to start reading from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes read. \mbox{\hyperlink{group__Constants_ga61d070a9afd3491ae8982e19c3be4bd9}{NBTCC\+\_\+\+READ\+\_\+\+ERROR}} indicates an error. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classnbtcc_1_1____TagMetaType_____aeec520f7b653f1156cbe47f08234c6a2}{nbtcc\+::\+\_\+\+\_\+\+Tag\+Meta\+Type\+\_\+\+\_\+$<$ T, TAG\+\_\+\+ENUM $>$}}, \mbox{\hyperlink{classnbtcc_1_1____TagMetaType_____aeec520f7b653f1156cbe47f08234c6a2}{nbtcc\+::\+\_\+\+\_\+\+Tag\+Meta\+Type\+\_\+\+\_\+$<$ int8\+\_\+t, Tag\+Type\+::k\+Tag\+Byte $>$}}, \mbox{\hyperlink{classnbtcc_1_1____TagMetaType_____aeec520f7b653f1156cbe47f08234c6a2}{nbtcc\+::\+\_\+\+\_\+\+Tag\+Meta\+Type\+\_\+\+\_\+$<$ double, Tag\+Type\+::k\+Tag\+Double $>$}}, \mbox{\hyperlink{classnbtcc_1_1____TagMetaType_____aeec520f7b653f1156cbe47f08234c6a2}{nbtcc\+::\+\_\+\+\_\+\+Tag\+Meta\+Type\+\_\+\+\_\+$<$ float, Tag\+Type\+::k\+Tag\+Float $>$}}, \mbox{\hyperlink{classnbtcc_1_1____TagMetaType_____aeec520f7b653f1156cbe47f08234c6a2}{nbtcc\+::\+\_\+\+\_\+\+Tag\+Meta\+Type\+\_\+\+\_\+$<$ int32\+\_\+t, Tag\+Type\+::k\+Tag\+Int $>$}}, \mbox{\hyperlink{classnbtcc_1_1____TagMetaType_____aeec520f7b653f1156cbe47f08234c6a2}{nbtcc\+::\+\_\+\+\_\+\+Tag\+Meta\+Type\+\_\+\+\_\+$<$ int64\+\_\+t, Tag\+Type\+::k\+Tag\+Long $>$}}, \mbox{\hyperlink{classnbtcc_1_1____TagMetaType_____aeec520f7b653f1156cbe47f08234c6a2}{nbtcc\+::\+\_\+\+\_\+\+Tag\+Meta\+Type\+\_\+\+\_\+$<$ int16\+\_\+t, Tag\+Type\+::k\+Tag\+Short $>$}}, \mbox{\hyperlink{classnbtcc_1_1____TagMetaArrayType_____aeca633a5160a58822c8a7378ed744cd7}{nbtcc\+::\+\_\+\+\_\+\+Tag\+Meta\+Array\+Type\+\_\+\+\_\+$<$ T, TAG\+\_\+\+ENUM $>$}}, \mbox{\hyperlink{classnbtcc_1_1____TagMetaArrayType_____aeca633a5160a58822c8a7378ed744cd7}{nbtcc\+::\+\_\+\+\_\+\+Tag\+Meta\+Array\+Type\+\_\+\+\_\+$<$ int8\+\_\+t, Tag\+Type\+::k\+Tag\+Byte\+Array $>$}}, \mbox{\hyperlink{classnbtcc_1_1____TagMetaArrayType_____aeca633a5160a58822c8a7378ed744cd7}{nbtcc\+::\+\_\+\+\_\+\+Tag\+Meta\+Array\+Type\+\_\+\+\_\+$<$ int32\+\_\+t, Tag\+Type\+::k\+Tag\+Int\+Array $>$}}, \mbox{\hyperlink{classnbtcc_1_1TagCompound_ab9194a0e5b4ad3a449d4c9a287087631}{nbtcc\+::\+Tag\+Compound}}, \mbox{\hyperlink{classnbtcc_1_1TagList_aebb9e9cf5993b1a8765956ea24558c49}{nbtcc\+::\+Tag\+List}}, and \mbox{\hyperlink{classnbtcc_1_1TagString_a6b5e35b64a5b6fdb731e6c09c3765a97}{nbtcc\+::\+Tag\+String}}.
+
+\mbox{\Hypertarget{classnbtcc_1_1BaseTag_a46a9fc585773abdfb3ac0f4c6946a336}\label{classnbtcc_1_1BaseTag_a46a9fc585773abdfb3ac0f4c6946a336}} 
+\index{nbtcc::BaseTag@{nbtcc::BaseTag}!ReadFromBuffer@{ReadFromBuffer}}
+\index{ReadFromBuffer@{ReadFromBuffer}!nbtcc::BaseTag@{nbtcc::BaseTag}}
+\doxysubsubsection{\texorpdfstring{ReadFromBuffer()}{ReadFromBuffer()}}
+{\footnotesize\ttfamily size\+\_\+t nbtcc\+::\+Base\+Tag\+::\+Read\+From\+Buffer (\begin{DoxyParamCaption}\item[{const char $\ast$}]{buffer,  }\item[{size\+\_\+t}]{length,  }\item[{size\+\_\+t}]{offset }\end{DoxyParamCaption})}
+
+Read information from a buffer and parse it into the tag. 
+\begin{DoxyParams}{Parameters}
+{\em buffer} & The buffer to read from. \\
+\hline
+{\em length} & The size of the buffer. \\
+\hline
+{\em offset} & The offset to start reading from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes read. \mbox{\hyperlink{group__Constants_ga61d070a9afd3491ae8982e19c3be4bd9}{NBTCC\+\_\+\+READ\+\_\+\+ERROR}} indicates an error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnbtcc_1_1BaseTag_adf38911288ac148579d64704469a224b}\label{classnbtcc_1_1BaseTag_adf38911288ac148579d64704469a224b}} 
+\index{nbtcc::BaseTag@{nbtcc::BaseTag}!ReadNameFromBuffer@{ReadNameFromBuffer}}
+\index{ReadNameFromBuffer@{ReadNameFromBuffer}!nbtcc::BaseTag@{nbtcc::BaseTag}}
+\doxysubsubsection{\texorpdfstring{ReadNameFromBuffer()}{ReadNameFromBuffer()}}
+{\footnotesize\ttfamily virtual size\+\_\+t nbtcc\+::\+Base\+Tag\+::\+Read\+Name\+From\+Buffer (\begin{DoxyParamCaption}\item[{const char $\ast$}]{buffer,  }\item[{size\+\_\+t}]{length,  }\item[{size\+\_\+t}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Read tag name from a buffer. 
+\begin{DoxyParams}{Parameters}
+{\em buffer} & The buffer to read from. \\
+\hline
+{\em length} & The size of the buffer. \\
+\hline
+{\em offset} & The offset to start reading from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes read. \mbox{\hyperlink{group__Constants_ga61d070a9afd3491ae8982e19c3be4bd9}{NBTCC\+\_\+\+READ\+\_\+\+ERROR}} indicates an error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnbtcc_1_1BaseTag_a6f248ef12443e576ff790486766d9988}\label{classnbtcc_1_1BaseTag_a6f248ef12443e576ff790486766d9988}} 
+\index{nbtcc::BaseTag@{nbtcc::BaseTag}!set\_name@{set\_name}}
+\index{set\_name@{set\_name}!nbtcc::BaseTag@{nbtcc::BaseTag}}
+\doxysubsubsection{\texorpdfstring{set\_name()}{set\_name()}}
+{\footnotesize\ttfamily void nbtcc\+::\+Base\+Tag\+::set\+\_\+name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the name of the tag. 
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the tag. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnbtcc_1_1BaseTag_a9f22acf9a8f2dc4af86cae468b90b4eb}\label{classnbtcc_1_1BaseTag_a9f22acf9a8f2dc4af86cae468b90b4eb}} 
+\index{nbtcc::BaseTag@{nbtcc::BaseTag}!SetId@{SetId}}
+\index{SetId@{SetId}!nbtcc::BaseTag@{nbtcc::BaseTag}}
+\doxysubsubsection{\texorpdfstring{SetId()}{SetId()}}
+{\footnotesize\ttfamily void nbtcc\+::\+Base\+Tag\+::\+Set\+Id (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Alias for {\ttfamily \mbox{\hyperlink{classnbtcc_1_1BaseTag_a6f248ef12443e576ff790486766d9988}{set\+\_\+name()}}} \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classnbtcc_1_1BaseTag_a6f248ef12443e576ff790486766d9988}{set\+\_\+name()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classnbtcc_1_1BaseTag_a645ac5654e8b37a71cff742ad98e662c}\label{classnbtcc_1_1BaseTag_a645ac5654e8b37a71cff742ad98e662c}} 
+\index{nbtcc::BaseTag@{nbtcc::BaseTag}!SetName@{SetName}}
+\index{SetName@{SetName}!nbtcc::BaseTag@{nbtcc::BaseTag}}
+\doxysubsubsection{\texorpdfstring{SetName()}{SetName()}}
+{\footnotesize\ttfamily void nbtcc\+::\+Base\+Tag\+::\+Set\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Alias for {\ttfamily \mbox{\hyperlink{classnbtcc_1_1BaseTag_a6f248ef12443e576ff790486766d9988}{set\+\_\+name()}}} \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classnbtcc_1_1BaseTag_a6f248ef12443e576ff790486766d9988}{set\+\_\+name()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classnbtcc_1_1BaseTag_a41bcfc53e9f8360d2323482bab34f85e}\label{classnbtcc_1_1BaseTag_a41bcfc53e9f8360d2323482bab34f85e}} 
+\index{nbtcc::BaseTag@{nbtcc::BaseTag}!type@{type}}
+\index{type@{type}!nbtcc::BaseTag@{nbtcc::BaseTag}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__Tags_ga88e0f89c109ed5d0d80840a3d53b8fd5}{Tag\+Type}} nbtcc\+::\+Base\+Tag\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+The type of the tag. \begin{DoxyReturn}{Returns}
+The type of the tag. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnbtcc_1_1BaseTag_a959492a313febb8702aa7d24d6124d9d}\label{classnbtcc_1_1BaseTag_a959492a313febb8702aa7d24d6124d9d}} 
+\index{nbtcc::BaseTag@{nbtcc::BaseTag}!WriteToBuffer@{WriteToBuffer}}
+\index{WriteToBuffer@{WriteToBuffer}!nbtcc::BaseTag@{nbtcc::BaseTag}}
+\doxysubsubsection{\texorpdfstring{WriteToBuffer()}{WriteToBuffer()}}
+{\footnotesize\ttfamily virtual size\+\_\+t nbtcc\+::\+Base\+Tag\+::\+Write\+To\+Buffer (\begin{DoxyParamCaption}\item[{char $\ast$}]{buffer,  }\item[{size\+\_\+t}]{length,  }\item[{size\+\_\+t}]{offset }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Write this tag to a buffer. 
+\begin{DoxyParams}{Parameters}
+{\em buffer} & The buffer to write to. \\
+\hline
+{\em length} & The size of the buffer. \\
+\hline
+{\em offset} & The offset to start writing from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes written. \mbox{\hyperlink{group__Constants_ga087c0c9b24acf33c1b03e7a1bc3f2214}{NBTCC\+\_\+\+WRITE\+\_\+\+ERROR}} indicates an error. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classnbtcc_1_1____TagMetaType_____a5b2f6ff0d3c91ad851c6ba38ed50afce}{nbtcc\+::\+\_\+\+\_\+\+Tag\+Meta\+Type\+\_\+\+\_\+$<$ T, TAG\+\_\+\+ENUM $>$}}, \mbox{\hyperlink{classnbtcc_1_1____TagMetaType_____a5b2f6ff0d3c91ad851c6ba38ed50afce}{nbtcc\+::\+\_\+\+\_\+\+Tag\+Meta\+Type\+\_\+\+\_\+$<$ int8\+\_\+t, Tag\+Type\+::k\+Tag\+Byte $>$}}, \mbox{\hyperlink{classnbtcc_1_1____TagMetaType_____a5b2f6ff0d3c91ad851c6ba38ed50afce}{nbtcc\+::\+\_\+\+\_\+\+Tag\+Meta\+Type\+\_\+\+\_\+$<$ double, Tag\+Type\+::k\+Tag\+Double $>$}}, \mbox{\hyperlink{classnbtcc_1_1____TagMetaType_____a5b2f6ff0d3c91ad851c6ba38ed50afce}{nbtcc\+::\+\_\+\+\_\+\+Tag\+Meta\+Type\+\_\+\+\_\+$<$ float, Tag\+Type\+::k\+Tag\+Float $>$}}, \mbox{\hyperlink{classnbtcc_1_1____TagMetaType_____a5b2f6ff0d3c91ad851c6ba38ed50afce}{nbtcc\+::\+\_\+\+\_\+\+Tag\+Meta\+Type\+\_\+\+\_\+$<$ int32\+\_\+t, Tag\+Type\+::k\+Tag\+Int $>$}}, \mbox{\hyperlink{classnbtcc_1_1____TagMetaType_____a5b2f6ff0d3c91ad851c6ba38ed50afce}{nbtcc\+::\+\_\+\+\_\+\+Tag\+Meta\+Type\+\_\+\+\_\+$<$ int64\+\_\+t, Tag\+Type\+::k\+Tag\+Long $>$}}, \mbox{\hyperlink{classnbtcc_1_1____TagMetaType_____a5b2f6ff0d3c91ad851c6ba38ed50afce}{nbtcc\+::\+\_\+\+\_\+\+Tag\+Meta\+Type\+\_\+\+\_\+$<$ int16\+\_\+t, Tag\+Type\+::k\+Tag\+Short $>$}}, \mbox{\hyperlink{classnbtcc_1_1____TagMetaArrayType_____a05b987dfd0c4a293f41d5d2d5b1385bc}{nbtcc\+::\+\_\+\+\_\+\+Tag\+Meta\+Array\+Type\+\_\+\+\_\+$<$ T, TAG\+\_\+\+ENUM $>$}}, \mbox{\hyperlink{classnbtcc_1_1____TagMetaArrayType_____a05b987dfd0c4a293f41d5d2d5b1385bc}{nbtcc\+::\+\_\+\+\_\+\+Tag\+Meta\+Array\+Type\+\_\+\+\_\+$<$ int8\+\_\+t, Tag\+Type\+::k\+Tag\+Byte\+Array $>$}}, \mbox{\hyperlink{classnbtcc_1_1____TagMetaArrayType_____a05b987dfd0c4a293f41d5d2d5b1385bc}{nbtcc\+::\+\_\+\+\_\+\+Tag\+Meta\+Array\+Type\+\_\+\+\_\+$<$ int32\+\_\+t, Tag\+Type\+::k\+Tag\+Int\+Array $>$}}, \mbox{\hyperlink{classnbtcc_1_1TagCompound_a8b80c104b16296fd3b1a71ef411429e5}{nbtcc\+::\+Tag\+Compound}}, \mbox{\hyperlink{classnbtcc_1_1TagList_a50ba61aafe29d6b530242e7a1590bcc2}{nbtcc\+::\+Tag\+List}}, and \mbox{\hyperlink{classnbtcc_1_1TagString_aa256eac7a9e5b46440c636652fa74b85}{nbtcc\+::\+Tag\+String}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classnbtcc_1_1BaseTag_aa211f661a7c3831acdee60d644539849}\label{classnbtcc_1_1BaseTag_aa211f661a7c3831acdee60d644539849}} 
+\index{nbtcc::BaseTag@{nbtcc::BaseTag}!read\_level@{read\_level}}
+\index{read\_level@{read\_level}!nbtcc::BaseTag@{nbtcc::BaseTag}}
+\doxysubsubsection{\texorpdfstring{read\_level}{read\_level}}
+{\footnotesize\ttfamily size\+\_\+t nbtcc\+::\+Base\+Tag\+::read\+\_\+level\hspace{0.3cm}{\ttfamily [static]}}
+
+The depth of this tag in the tree. (used in \mbox{\hyperlink{group__Utils_gaa343595fcff12d41375167ee23c31134}{Print\+Debug()}}) 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/base\+\_\+tag.\+h\end{DoxyCompactItemize}

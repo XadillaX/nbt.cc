@@ -1,0 +1,24 @@
+\hypertarget{meta__array__tags_8h_source}{}\doxysection{meta\+\_\+array\+\_\+tags.\+h}
+\label{meta__array__tags_8h_source}\index{include/tags/meta\_array\_tags.h@{include/tags/meta\_array\_tags.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef INCLUDE\_TAGS\_META\_ARRAY\_TAGS\_H\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define INCLUDE\_TAGS\_META\_ARRAY\_TAGS\_H\_}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}base\_tag.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}nbt\_version.h"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{namespace }nbtcc \{}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define DECLARE\_TAG\_META\_ARRAY\_CLASS(raw\_type, element\_tag\_type)               \(\backslash\)}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{  class element\_tag\_type\#\#Array                                                \(\backslash\)}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{      : public \_\_TagMetaArrayType\_\_<raw\_type,                                  \(\backslash\)}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{                                    TagType::k\#\#element\_tag\_type\#\#Array> \{\}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{21 DECLARE\_TAG\_META\_ARRAY\_CLASS(int8\_t, \mbox{\hyperlink{classnbtcc_1_1TagByte}{TagByte}});}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{26 DECLARE\_TAG\_META\_ARRAY\_CLASS(int32\_t, \mbox{\hyperlink{classnbtcc_1_1TagInt}{TagInt}});}
+\DoxyCodeLine{30 \}  \textcolor{comment}{// namespace nbtcc}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// INCLUDE\_TAGS\_META\_ARRAY\_TAGS\_H\_}}
+
+\end{DoxyCode}
