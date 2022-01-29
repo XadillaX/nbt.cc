@@ -79,17 +79,15 @@ docs: $(INCLUDE_FILES) Doxyfile README.md
 publish-docs:
 	rm -rf docs
 	cp ./tools/touch_gh-pages_file touch_gh-pages_file
-	cp -R include include.tmp
+	cp -R include include.tmp && cp -R assets assets.tmp
 	git branch -D gh-pages || echo 0
 	git checkout -b gh-pages
 	git pull origin gh-pages
 	git merge main --no-ff
-	rm -rf docs
-	rm -rf include
-	mv include.tmp include
+	rm -rf docs && rm -rf include && rm -rf assets
+	mv include.tmp include && mv assets.tmp assets
 	$(MAKE) docs
-	./touch_gh-pages_file
-	rm touch_gh-pages_file
+	./touch_gh-pages_file && rm touch_gh-pages_file
 	git rm -rf example || echo 0
 	git rm -rf src || echo 0
 	git rm -rf tools || echo 0
