@@ -11,10 +11,6 @@ Minecraft NBT format parser and modifier.
 
 See https://xadillax.github.io/nbt.cc/.
 
-## Contribution
-
-PR is welcomed. ^_^
-
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
