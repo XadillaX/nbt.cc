@@ -1,0 +1,165 @@
+\hypertarget{group__Tags}{}\doxysection{Tags}
+\label{group__Tags}\index{Tags@{Tags}}
+
+
+The \mbox{\hyperlink{classnbtcc_1_1NBT}{NBT}} tags.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classnbtcc_1_1____TagMetaArrayType____}{nbtcc\+::\+\_\+\+\_\+\+Tag\+Meta\+Array\+Type\+\_\+\+\_\+$<$ T, TAG\+\_\+\+ENUM $>$}}
+\item 
+class \mbox{\hyperlink{classnbtcc_1_1____TagMetaType____}{nbtcc\+::\+\_\+\+\_\+\+Tag\+Meta\+Type\+\_\+\+\_\+$<$ T, TAG\+\_\+\+ENUM $>$}}
+\item 
+class \mbox{\hyperlink{classnbtcc_1_1BaseTag}{nbtcc\+::\+Base\+Tag}}
+\item 
+class \mbox{\hyperlink{classnbtcc_1_1TagByte}{nbtcc\+::\+Tag\+Byte}}
+\item 
+class \mbox{\hyperlink{classnbtcc_1_1TagByteArray}{nbtcc\+::\+Tag\+Byte\+Array}}
+\item 
+class \mbox{\hyperlink{classnbtcc_1_1TagCompound}{nbtcc\+::\+Tag\+Compound}}
+\item 
+class \mbox{\hyperlink{classnbtcc_1_1TagDouble}{nbtcc\+::\+Tag\+Double}}
+\item 
+class \mbox{\hyperlink{classnbtcc_1_1TagFloat}{nbtcc\+::\+Tag\+Float}}
+\item 
+class \mbox{\hyperlink{classnbtcc_1_1TagInt}{nbtcc\+::\+Tag\+Int}}
+\item 
+class \mbox{\hyperlink{classnbtcc_1_1TagIntArray}{nbtcc\+::\+Tag\+Int\+Array}}
+\item 
+class \mbox{\hyperlink{classnbtcc_1_1TagList}{nbtcc\+::\+Tag\+List}}
+\item 
+class \mbox{\hyperlink{classnbtcc_1_1TagLong}{nbtcc\+::\+Tag\+Long}}
+\item 
+class \mbox{\hyperlink{classnbtcc_1_1TagShort}{nbtcc\+::\+Tag\+Short}}
+\item 
+class \mbox{\hyperlink{classnbtcc_1_1TagString}{nbtcc\+::\+Tag\+String}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__Tags_ga2c25728c2b0c2af7275f93845efa1d6f}{DECLARE\+\_\+\+TAG\+\_\+\+META\+\_\+\+ARRAY\+\_\+\+CLASS}}(raw\+\_\+type,  element\+\_\+tag\+\_\+type)
+\item 
+\mbox{\Hypertarget{group__Tags_gafb2c2fcd672cb27a07dc9165eac7a809}\label{group__Tags_gafb2c2fcd672cb27a07dc9165eac7a809}} 
+\#define {\bfseries DECLARE\+\_\+\+TAG\+\_\+\+META\+\_\+\+CLASS}(raw\+\_\+type,  tag\+\_\+type)~  class tag\+\_\+type \+: public \+\_\+\+\_\+\+Tag\+Meta\+Type\+\_\+\+\_\+$<$raw\+\_\+type, Tag\+Type\+::k\#\#tag\+\_\+type$>$ \{\}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__Tags_ga88e0f89c109ed5d0d80840a3d53b8fd5}{nbtcc\+::\+Tag\+Type}} \+: unsigned char \{ \newline
+\mbox{\hyperlink{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5a975a4c32dfab1abf9c4a9e8b75f2ad37}{nbtcc\+::k\+Tag\+End}} = 0
+, \mbox{\hyperlink{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5a15ea97648fdddad8ddae9eae9dc28d3f}{nbtcc\+::k\+Tag\+Byte}}
+, \mbox{\hyperlink{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5ac355b4c4cc16bad5ca6c906bb21cf1af}{nbtcc\+::k\+Tag\+Short}}
+, \mbox{\hyperlink{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5a5d030b44b27e4ab87e5d71edeaae0201}{nbtcc\+::k\+Tag\+Int}}
+, \newline
+\mbox{\hyperlink{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5a5704a34c269a462aa0b680b3b28282f7}{nbtcc\+::k\+Tag\+Long}}
+, \mbox{\hyperlink{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5a9ec739f45bf5dd77797a92ee66015de0}{nbtcc\+::k\+Tag\+Float}}
+, \mbox{\hyperlink{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5ae15effe7bf5386b0f1a0746c423002a4}{nbtcc\+::k\+Tag\+Double}}
+, \mbox{\hyperlink{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5a3486f329f9073d3386a76582acd2820b}{nbtcc\+::k\+Tag\+Byte\+Array}}
+, \newline
+\mbox{\hyperlink{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5a523d1bed4f552271f965bf3b8960e04f}{nbtcc\+::k\+Tag\+String}}
+, \mbox{\hyperlink{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5a374a5cdefa9f1e05d518ff276488698a}{nbtcc\+::k\+Tag\+List}}
+, \mbox{\hyperlink{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5ac94dd4581bca9d508616936c86154b5e}{nbtcc\+::k\+Tag\+Compound}}
+, \mbox{\hyperlink{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5a578d7194c13d5b8db11115042ad218d1}{nbtcc\+::k\+Tag\+Int\+Array}}
+, \newline
+\mbox{\hyperlink{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5a0750be0ab18241a6bc2e42944694c5fb}{nbtcc\+::k\+Tag\+Max}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classnbtcc_1_1NBT}{NBT}} tags. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group__Tags_ga2c25728c2b0c2af7275f93845efa1d6f}\label{group__Tags_ga2c25728c2b0c2af7275f93845efa1d6f}} 
+\index{Tags@{Tags}!DECLARE\_TAG\_META\_ARRAY\_CLASS@{DECLARE\_TAG\_META\_ARRAY\_CLASS}}
+\index{DECLARE\_TAG\_META\_ARRAY\_CLASS@{DECLARE\_TAG\_META\_ARRAY\_CLASS}!Tags@{Tags}}
+\doxysubsubsection{\texorpdfstring{DECLARE\_TAG\_META\_ARRAY\_CLASS}{DECLARE\_TAG\_META\_ARRAY\_CLASS}}
+{\footnotesize\ttfamily \#define DECLARE\+\_\+\+TAG\+\_\+\+META\+\_\+\+ARRAY\+\_\+\+CLASS(\begin{DoxyParamCaption}\item[{}]{raw\+\_\+type,  }\item[{}]{element\+\_\+tag\+\_\+type }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  \textcolor{keyword}{class }element\_tag\_type\#\#Array                                                \(\backslash\)}
+\DoxyCodeLine{      : \textcolor{keyword}{public} \_\_TagMetaArrayType\_\_<raw\_type,                                  \(\backslash\)}
+\DoxyCodeLine{                                    TagType::k\#\#element\_tag\_type\#\#Array> \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{group__Tags_ga88e0f89c109ed5d0d80840a3d53b8fd5}\label{group__Tags_ga88e0f89c109ed5d0d80840a3d53b8fd5}} 
+\index{Tags@{Tags}!TagType@{TagType}}
+\index{TagType@{TagType}!Tags@{Tags}}
+\doxysubsubsection{\texorpdfstring{TagType}{TagType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__Tags_ga88e0f89c109ed5d0d80840a3d53b8fd5}{nbtcc\+::\+Tag\+Type}} \+: unsigned char}
+
+The tag types.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classnbtcc_1_1BaseTag}{Base\+Tag}} 
+
+\href{https://minecraft.fandom.com/wiki/NBT_format\#TAG_definition}{\texttt{ https\+://minecraft.\+fandom.\+com/wiki/\+NBT\+\_\+format\#\+TAG\+\_\+definition}} 
+\end{DoxySeeAlso}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kTagEnd@{kTagEnd}!Tags@{Tags}}\index{Tags@{Tags}!kTagEnd@{kTagEnd}}}\mbox{\Hypertarget{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5a975a4c32dfab1abf9c4a9e8b75f2ad37}\label{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5a975a4c32dfab1abf9c4a9e8b75f2ad37}} 
+k\+Tag\+End&Used to mark the end of compound tags. This tag does not have a name, so it is only ever a single byte 0. It may also be the type of empty List tags. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kTagByte@{kTagByte}!Tags@{Tags}}\index{Tags@{Tags}!kTagByte@{kTagByte}}}\mbox{\Hypertarget{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5a15ea97648fdddad8ddae9eae9dc28d3f}\label{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5a15ea97648fdddad8ddae9eae9dc28d3f}} 
+k\+Tag\+Byte&A signed integral type. Sometimes used for booleans. Full range of $-(2^7)$ to $(2^7-1)$.~\newline
+ $(-128\ to\ 127)$ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kTagShort@{kTagShort}!Tags@{Tags}}\index{Tags@{Tags}!kTagShort@{kTagShort}}}\mbox{\Hypertarget{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5ac355b4c4cc16bad5ca6c906bb21cf1af}\label{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5ac355b4c4cc16bad5ca6c906bb21cf1af}} 
+k\+Tag\+Short&A signed integral type. Full range of $-(2^{15})$ to $(2^{15} - 1)$.~\newline
+ $(-32,768\ to\ 32,767)$ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kTagInt@{kTagInt}!Tags@{Tags}}\index{Tags@{Tags}!kTagInt@{kTagInt}}}\mbox{\Hypertarget{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5a5d030b44b27e4ab87e5d71edeaae0201}\label{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5a5d030b44b27e4ab87e5d71edeaae0201}} 
+k\+Tag\+Int&A signed integral type. Full range of $-(2^{31})$ to $(2^{31} - 1)$.~\newline
+ $(-2,147,483,648\ to \ 2,147,483,647)$ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kTagLong@{kTagLong}!Tags@{Tags}}\index{Tags@{Tags}!kTagLong@{kTagLong}}}\mbox{\Hypertarget{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5a5704a34c269a462aa0b680b3b28282f7}\label{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5a5704a34c269a462aa0b680b3b28282f7}} 
+k\+Tag\+Long&A signed integral type. Full range of $-(2^{63})$ to $(2^{63} - 1)$.~\newline
+ $(-9,223,372,036,854,775,808\ to \ 9,223,372,036,854,775,807)$ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kTagFloat@{kTagFloat}!Tags@{Tags}}\index{Tags@{Tags}!kTagFloat@{kTagFloat}}}\mbox{\Hypertarget{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5a9ec739f45bf5dd77797a92ee66015de0}\label{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5a9ec739f45bf5dd77797a92ee66015de0}} 
+k\+Tag\+Float&A signed floating point type. Precision varies throughout number line;~\newline
+ See \href{https://en.wikipedia.org/wiki/Single-precision_floating-point_format}{\texttt{ Single-\/precision floating-\/point format}}. Maximum value about $3.4 * 10^{38}$ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kTagDouble@{kTagDouble}!Tags@{Tags}}\index{Tags@{Tags}!kTagDouble@{kTagDouble}}}\mbox{\Hypertarget{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5ae15effe7bf5386b0f1a0746c423002a4}\label{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5ae15effe7bf5386b0f1a0746c423002a4}} 
+k\+Tag\+Double&A signed floating point type. Precision varies throughout number line;~\newline
+ See \mbox{[}Double-\/precision floating-\/point format\mbox{]}(\href{https://en.wikipedia.org/wiki/Double-precision_floating-point_format}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Double-\/precision\+\_\+floating-\/point\+\_\+format}}). Maximum value about $1.8 * 10^{308}$ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kTagByteArray@{kTagByteArray}!Tags@{Tags}}\index{Tags@{Tags}!kTagByteArray@{kTagByteArray}}}\mbox{\Hypertarget{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5a3486f329f9073d3386a76582acd2820b}\label{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5a3486f329f9073d3386a76582acd2820b}} 
+k\+Tag\+Byte\+Array&An array of bytes. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kTagString@{kTagString}!Tags@{Tags}}\index{Tags@{Tags}!kTagString@{kTagString}}}\mbox{\Hypertarget{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5a523d1bed4f552271f965bf3b8960e04f}\label{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5a523d1bed4f552271f965bf3b8960e04f}} 
+k\+Tag\+String&A UTF-\/8 string. It has a size, rather than being null terminated. $65,535$ bytes interpretable as UTF-\/8 (see \href{https://en.wikipedia.org/wiki/UTF-8\#Modified_UTF-8}{\texttt{ modified UTF-\/8 format}}; most commonly-\/used characters are a single byte). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kTagList@{kTagList}!Tags@{Tags}}\index{Tags@{Tags}!kTagList@{kTagList}}}\mbox{\Hypertarget{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5a374a5cdefa9f1e05d518ff276488698a}\label{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5a374a5cdefa9f1e05d518ff276488698a}} 
+k\+Tag\+List&A list of tag payloads, without repeated tag IDs or any tag names. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kTagCompound@{kTagCompound}!Tags@{Tags}}\index{Tags@{Tags}!kTagCompound@{kTagCompound}}}\mbox{\Hypertarget{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5ac94dd4581bca9d508616936c86154b5e}\label{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5ac94dd4581bca9d508616936c86154b5e}} 
+k\+Tag\+Compound&A list of fully formed tags, including their IDs, names, and payloads. No two tags may have the same name. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kTagIntArray@{kTagIntArray}!Tags@{Tags}}\index{Tags@{Tags}!kTagIntArray@{kTagIntArray}}}\mbox{\Hypertarget{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5a578d7194c13d5b8db11115042ad218d1}\label{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5a578d7194c13d5b8db11115042ad218d1}} 
+k\+Tag\+Int\+Array&An array of TAG\+\_\+\+Int\textquotesingle{}s payloads. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kTagMax@{kTagMax}!Tags@{Tags}}\index{Tags@{Tags}!kTagMax@{kTagMax}}}\mbox{\Hypertarget{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5a0750be0ab18241a6bc2e42944694c5fb}\label{group__Tags_gga88e0f89c109ed5d0d80840a3d53b8fd5a0750be0ab18241a6bc2e42944694c5fb}} 
+k\+Tag\+Max&The maximum tag type. (not a valid tag type) \\
+\hline
+
+\end{DoxyEnumFields}

@@ -1,0 +1,78 @@
+\hypertarget{nbt_8h_source}{}\doxysection{nbt.\+h}
+\label{nbt_8h_source}\index{include/nbt.h@{include/nbt.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef INCLUDE\_NBT\_H\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define INCLUDE\_NBT\_H\_}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}nbt\_version.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}tags/compound.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}tags/list.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}tags/meta\_array\_tags.h"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}tags/meta\_tags.h"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}tags/string.h"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{namespace }nbtcc \{}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classnbtcc_1_1NBT}{NBT}} \{}
+\DoxyCodeLine{22  \textcolor{keyword}{public}:}
+\DoxyCodeLine{26   \mbox{\hyperlink{classnbtcc_1_1NBT_a5386cb3634783df6d0f7b0770fb4c214}{NBT}}() \{\}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{31   \mbox{\hyperlink{classnbtcc_1_1NBT_ae986851d0bd642db9297ff60a31ddde3}{\string~NBT}}() \{\}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{38   \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{39   \textcolor{keyword}{inline} std::shared\_ptr<T> \mbox{\hyperlink{classnbtcc_1_1NBT_a397a1d0f86d0d9f79a8a664d22f1f329}{GetFromRoot}}(\textcolor{keyword}{const} std::string\& name) \{}
+\DoxyCodeLine{40     \textcolor{keywordflow}{return} \textcolor{keyword}{reinterpret\_cast<}T*\textcolor{keyword}{>}(\_root[name]);}
+\DoxyCodeLine{41   \}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{49   \textcolor{keyword}{inline} std::shared\_ptr<BaseTag> \mbox{\hyperlink{classnbtcc_1_1NBT_abbeb6656124e53b05afa62865586347f}{GetFromRoot}}(\textcolor{keyword}{const} std::string\& name) \{}
+\DoxyCodeLine{50     \textcolor{keywordflow}{return} \_root[name];}
+\DoxyCodeLine{51   \}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{57   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classnbtcc_1_1NBT_a8afbcac7b70145211aaa7c2d3b0ed0f2}{RootKeys}}(std::vector<std::string>* keys) \{}
+\DoxyCodeLine{58     keys-\/>clear();}
+\DoxyCodeLine{59     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\& kv : \_root) \{}
+\DoxyCodeLine{60       keys-\/>push\_back(kv.first);}
+\DoxyCodeLine{61     \}}
+\DoxyCodeLine{62   \}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{71   \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classnbtcc_1_1NBT_a286946601d11f0ade8fba4257756fb7e}{AddToRoot}}(\textcolor{keyword}{const} std::string\& name,}
+\DoxyCodeLine{72                         std::shared\_ptr<BaseTag> tag,}
+\DoxyCodeLine{73                         \textcolor{keywordtype}{bool} overwrite = \textcolor{keyword}{false}) \{}
+\DoxyCodeLine{74     \textcolor{keywordflow}{if} (\_root.find(name) != \_root.end() \&\& !overwrite) \{}
+\DoxyCodeLine{75       \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{76     \}}
+\DoxyCodeLine{77     \_root[name] = tag;}
+\DoxyCodeLine{78     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{79   \}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{86   \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classnbtcc_1_1NBT_a02416cb459bd985edd4ddfd83da70e51}{RemoveFromRoot}}(\textcolor{keyword}{const} std::string\& name) \{}
+\DoxyCodeLine{87     \textcolor{keywordflow}{if} (\_root.find(name) == \_root.end()) \{}
+\DoxyCodeLine{88       \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{89     \}}
+\DoxyCodeLine{90     \_root.erase(name);}
+\DoxyCodeLine{91     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{92   \}}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{100   \textcolor{keywordtype}{bool} \mbox{\hyperlink{classnbtcc_1_1NBT_ac34e8678bf45691917c47fa5e101d4c2}{Load}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* buffer, \textcolor{keywordtype}{size\_t} size);}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{106   \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classnbtcc_1_1NBT_a4a78b5e002d609d64e6231ffc994bf6b}{GetBufferSize}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{114   \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classnbtcc_1_1NBT_afcb01bbdcee554fbefd84c450173ebfa}{Write}}(\textcolor{keywordtype}{char}* buffer, \textcolor{keywordtype}{size\_t} buffer\_length) \textcolor{keyword}{const};}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116  \textcolor{keyword}{private}:}
+\DoxyCodeLine{117   \textcolor{keyword}{struct }ReturnedTag \{}
+\DoxyCodeLine{118     std::shared\_ptr<BaseTag> tag;}
+\DoxyCodeLine{119     \textcolor{keywordtype}{size\_t} length;}
+\DoxyCodeLine{120   \};}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122   \textcolor{keyword}{static} ReturnedTag GetNextTag(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* buffer, \textcolor{keywordtype}{size\_t} size, \textcolor{keywordtype}{size\_t} offset);}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124  \textcolor{keyword}{private}:}
+\DoxyCodeLine{125   std::map<std::string, std::shared\_ptr<BaseTag>> \_root;}
+\DoxyCodeLine{126 \};}
+\DoxyCodeLine{131 \}  \textcolor{comment}{// namespace nbtcc}}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// INCLUDE\_NBT\_H\_}}
+
+\end{DoxyCode}
