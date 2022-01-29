@@ -13,6 +13,8 @@ namespace nbtcc {
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 
+void PrintDebug(const char* format, ...);
+
 class TagList;
 class BaseTag {
   friend class TagList;
@@ -70,23 +72,6 @@ class BaseTag {
   std::string _name;
   TagValue _value;
 };
-
-#ifdef _PRINT_DEBUG
-inline void PrintDebug(const char* format, ...) {
-  va_list args;
-  va_start(args, format);
-  std::string fmt = "";
-  for (size_t i = 0; i < BaseTag::read_level; i++) {
-    fmt += "  ";
-  }
-  fmt += format;
-
-  vfprintf(stderr, fmt.c_str(), args);
-  va_end(args);
-}
-#else
-inline void PrintDebug(const char*, ...) {}
-#endif
 
 template <typename T, TagType TAG_ENUM>
 class __TagMetaType__ : public BaseTag {

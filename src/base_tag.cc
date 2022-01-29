@@ -6,6 +6,23 @@ using std::string;
 
 #define TAG_TYPE_OFFSET sizeof(TagType)
 
+#ifdef _PRINT_DEBUG
+inline void PrintDebug(const char* format, ...) {
+  va_list args;
+  va_start(args, format);
+  std::string fmt = "";
+  for (size_t i = 0; i < BaseTag::read_level; i++) {
+    fmt += "  ";
+  }
+  fmt += format;
+
+  vfprintf(stderr, fmt.c_str(), args);
+  va_end(args);
+}
+#else
+inline void PrintDebug(const char*, ...) {}
+#endif
+
 size_t BaseTag::read_level = 0;
 
 BaseTag::BaseTag(TagType type) : _type(type), _name(""), _value(type) {}
