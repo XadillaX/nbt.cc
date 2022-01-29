@@ -99,6 +99,7 @@ publish-docs:
 	git add -f docs || echo 0
 	git add include
 	git add seed
+	git add assets
 	git commit -m "Update docs"
 	git push origin gh-pages
 	git checkout main
