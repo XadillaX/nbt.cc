@@ -40,3 +40,5 @@ build
 .cache
 
 docs
+
+touch_gh-pages_file

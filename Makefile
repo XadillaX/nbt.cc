@@ -77,12 +77,15 @@ docs: $(INCLUDE_FILES) Doxyfile README.md
 
 .PHONY: publish-docs
 publish-docs:
-	git branch -D gh-pages
+	cp ./tools/touch_gh-pages_file touch_gh-pages_file
+	git branch -D gh-pages || echo 0
 	git checkout -b gh-pages
 	git pull origin gh-pages
 	git merge main --no-ff
+	rm -rf docs
 	$(MAKE) docs
-	./tools/touch_gh-pages_file
+	./touch_gh-pages_file
+	rm touch_gh-pages_file
 	git rm -rf example || echo 0
 	git rm -rf include || echo 0
 	git rm -rf src || echo 0
