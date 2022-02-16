@@ -7,7 +7,7 @@ using std::string;
 #define TAG_TYPE_OFFSET sizeof(TagType)
 
 #ifdef _PRINT_DEBUG
-inline void PrintDebug(const char* format, ...) {
+void PrintDebug(const char* format, ...) {
   va_list args;
   va_start(args, format);
   std::string fmt = "";
@@ -20,7 +20,7 @@ inline void PrintDebug(const char* format, ...) {
   va_end(args);
 }
 #else
-inline void PrintDebug(const char*, ...) {}
+void PrintDebug(const char*, ...) {}
 #endif
 
 size_t BaseTag::read_level = 0;
