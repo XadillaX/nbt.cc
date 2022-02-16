@@ -11,7 +11,12 @@ namespace nbtcc {
  * @{
  */
 #define DECLARE_TAG_META_CLASS(raw_type, tag_type)                             \
-  class tag_type : public __TagMetaType__<raw_type, TagType::k##tag_type> {}
+  class tag_type : public __TagMetaType__<raw_type, TagType::k##tag_type> {    \
+   public:                                                                     \
+    inline tag_type() : __TagMetaType__<raw_type, TagType::k##tag_type>() {}   \
+    explicit inline tag_type(const raw_type& value)                            \
+        : __TagMetaType__<raw_type, TagType::k##tag_type>(value) {}            \
+  }
 
 /**
  * The tag class for \ref TagType::kTagByte.

@@ -103,25 +103,30 @@ $(document).ready(function(){initNavTree('meta__tags_8h_source.html',''); initRe
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span>nbtcc {</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#define DECLARE_TAG_META_CLASS(raw_type, tag_type)                             \</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">  class tag_type : public __TagMetaType__&lt;raw_type, TagType::k##tag_type&gt; {}</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classnbtcc_1_1TagByte.html">   19</a></span>DECLARE_TAG_META_CLASS(int8_t, <a class="code hl_class" href="classnbtcc_1_1TagByte.html">TagByte</a>);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classnbtcc_1_1TagShort.html">   23</a></span>DECLARE_TAG_META_CLASS(int16_t, <a class="code hl_class" href="classnbtcc_1_1TagShort.html">TagShort</a>);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classnbtcc_1_1TagInt.html">   27</a></span>DECLARE_TAG_META_CLASS(int32_t, <a class="code hl_class" href="classnbtcc_1_1TagInt.html">TagInt</a>);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classnbtcc_1_1TagLong.html">   31</a></span>DECLARE_TAG_META_CLASS(int64_t, <a class="code hl_class" href="classnbtcc_1_1TagLong.html">TagLong</a>);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classnbtcc_1_1TagFloat.html">   35</a></span>DECLARE_TAG_META_CLASS(<span class="keywordtype">float</span>, <a class="code hl_class" href="classnbtcc_1_1TagFloat.html">TagFloat</a>);</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classnbtcc_1_1TagDouble.html">   39</a></span>DECLARE_TAG_META_CLASS(<span class="keywordtype">double</span>, <a class="code hl_class" href="classnbtcc_1_1TagDouble.html">TagDouble</a>);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#undef DECLARE_TAG_META_CLASS</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>}  <span class="comment">// namespace nbtcc</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#endif  </span><span class="comment">// INCLUDE_TAGS_META_TAGS_H_</span></div>
-<div class="ttc" id="aclassnbtcc_1_1TagByte_html"><div class="ttname"><a href="classnbtcc_1_1TagByte.html">nbtcc::TagByte</a></div><div class="ttdef"><b>Definition:</b> meta_tags.h:19</div></div>
-<div class="ttc" id="aclassnbtcc_1_1TagDouble_html"><div class="ttname"><a href="classnbtcc_1_1TagDouble.html">nbtcc::TagDouble</a></div><div class="ttdef"><b>Definition:</b> meta_tags.h:39</div></div>
-<div class="ttc" id="aclassnbtcc_1_1TagFloat_html"><div class="ttname"><a href="classnbtcc_1_1TagFloat.html">nbtcc::TagFloat</a></div><div class="ttdef"><b>Definition:</b> meta_tags.h:35</div></div>
-<div class="ttc" id="aclassnbtcc_1_1TagInt_html"><div class="ttname"><a href="classnbtcc_1_1TagInt.html">nbtcc::TagInt</a></div><div class="ttdef"><b>Definition:</b> meta_tags.h:27</div></div>
-<div class="ttc" id="aclassnbtcc_1_1TagLong_html"><div class="ttname"><a href="classnbtcc_1_1TagLong.html">nbtcc::TagLong</a></div><div class="ttdef"><b>Definition:</b> meta_tags.h:31</div></div>
-<div class="ttc" id="aclassnbtcc_1_1TagShort_html"><div class="ttname"><a href="classnbtcc_1_1TagShort.html">nbtcc::TagShort</a></div><div class="ttdef"><b>Definition:</b> meta_tags.h:23</div></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">  class tag_type : public __TagMetaType__&lt;raw_type, TagType::k##tag_type&gt; {    \</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">   public:                                                                     \</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">    inline tag_type() : __TagMetaType__&lt;raw_type, TagType::k##tag_type&gt;() {}   \</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">    explicit inline tag_type(const raw_type&amp; value)                            \</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">        : __TagMetaType__&lt;raw_type, TagType::k##tag_type&gt;(value) {}            \</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">  }</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classnbtcc_1_1TagByte.html">   24</a></span>DECLARE_TAG_META_CLASS(int8_t, <a class="code hl_class" href="classnbtcc_1_1TagByte.html">TagByte</a>);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classnbtcc_1_1TagShort.html">   28</a></span>DECLARE_TAG_META_CLASS(int16_t, <a class="code hl_class" href="classnbtcc_1_1TagShort.html">TagShort</a>);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classnbtcc_1_1TagInt.html">   32</a></span>DECLARE_TAG_META_CLASS(int32_t, <a class="code hl_class" href="classnbtcc_1_1TagInt.html">TagInt</a>);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classnbtcc_1_1TagLong.html">   36</a></span>DECLARE_TAG_META_CLASS(int64_t, <a class="code hl_class" href="classnbtcc_1_1TagLong.html">TagLong</a>);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classnbtcc_1_1TagFloat.html">   40</a></span>DECLARE_TAG_META_CLASS(<span class="keywordtype">float</span>, <a class="code hl_class" href="classnbtcc_1_1TagFloat.html">TagFloat</a>);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classnbtcc_1_1TagDouble.html">   44</a></span>DECLARE_TAG_META_CLASS(<span class="keywordtype">double</span>, <a class="code hl_class" href="classnbtcc_1_1TagDouble.html">TagDouble</a>);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#undef DECLARE_TAG_META_CLASS</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>}  <span class="comment">// namespace nbtcc</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#endif  </span><span class="comment">// INCLUDE_TAGS_META_TAGS_H_</span></div>
+<div class="ttc" id="aclassnbtcc_1_1TagByte_html"><div class="ttname"><a href="classnbtcc_1_1TagByte.html">nbtcc::TagByte</a></div><div class="ttdef"><b>Definition:</b> meta_tags.h:24</div></div>
+<div class="ttc" id="aclassnbtcc_1_1TagDouble_html"><div class="ttname"><a href="classnbtcc_1_1TagDouble.html">nbtcc::TagDouble</a></div><div class="ttdef"><b>Definition:</b> meta_tags.h:44</div></div>
+<div class="ttc" id="aclassnbtcc_1_1TagFloat_html"><div class="ttname"><a href="classnbtcc_1_1TagFloat.html">nbtcc::TagFloat</a></div><div class="ttdef"><b>Definition:</b> meta_tags.h:40</div></div>
+<div class="ttc" id="aclassnbtcc_1_1TagInt_html"><div class="ttname"><a href="classnbtcc_1_1TagInt.html">nbtcc::TagInt</a></div><div class="ttdef"><b>Definition:</b> meta_tags.h:32</div></div>
+<div class="ttc" id="aclassnbtcc_1_1TagLong_html"><div class="ttname"><a href="classnbtcc_1_1TagLong.html">nbtcc::TagLong</a></div><div class="ttdef"><b>Definition:</b> meta_tags.h:36</div></div>
+<div class="ttc" id="aclassnbtcc_1_1TagShort_html"><div class="ttname"><a href="classnbtcc_1_1TagShort.html">nbtcc::TagShort</a></div><div class="ttdef"><b>Definition:</b> meta_tags.h:28</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

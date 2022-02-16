@@ -41,8 +41,7 @@ class \mbox{\hyperlink{classnbtcc_1_1TagString}{nbtcc\+::\+Tag\+String}}
 \item 
 \#define \mbox{\hyperlink{group__Tags_ga2c25728c2b0c2af7275f93845efa1d6f}{DECLARE\+\_\+\+TAG\+\_\+\+META\+\_\+\+ARRAY\+\_\+\+CLASS}}(raw\+\_\+type,  element\+\_\+tag\+\_\+type)
 \item 
-\mbox{\Hypertarget{group__Tags_gafb2c2fcd672cb27a07dc9165eac7a809}\label{group__Tags_gafb2c2fcd672cb27a07dc9165eac7a809}} 
-\#define {\bfseries DECLARE\+\_\+\+TAG\+\_\+\+META\+\_\+\+CLASS}(raw\+\_\+type,  tag\+\_\+type)~  class tag\+\_\+type \+: public \+\_\+\+\_\+\+Tag\+Meta\+Type\+\_\+\+\_\+$<$raw\+\_\+type, Tag\+Type\+::k\#\#tag\+\_\+type$>$ \{\}
+\#define \mbox{\hyperlink{group__Tags_gafb2c2fcd672cb27a07dc9165eac7a809}{DECLARE\+\_\+\+TAG\+\_\+\+META\+\_\+\+CLASS}}(raw\+\_\+type,  tag\+\_\+type)
 \end{DoxyCompactItemize}
 \doxysubsection*{Enumerations}
 \begin{DoxyCompactItemize}
@@ -84,7 +83,28 @@ The \mbox{\hyperlink{classnbtcc_1_1NBT}{NBT}} tags.
 \begin{DoxyCode}{0}
 \DoxyCodeLine{  \textcolor{keyword}{class }element\_tag\_type\#\#Array                                                \(\backslash\)}
 \DoxyCodeLine{      : \textcolor{keyword}{public} \_\_TagMetaArrayType\_\_<raw\_type,                                  \(\backslash\)}
-\DoxyCodeLine{                                    TagType::k\#\#element\_tag\_type\#\#Array> \{\}}
+\DoxyCodeLine{                                    TagType::k\#\#element\_tag\_type\#\#Array> \{     \(\backslash\)}
+\DoxyCodeLine{   public:                                                                     \(\backslash\)}
+\DoxyCodeLine{    inline element\_tag\_type\#\#Array()                                           \(\backslash\)}
+\DoxyCodeLine{        : \_\_TagMetaArrayType\_\_<raw\_type,                                       \(\backslash\)}
+\DoxyCodeLine{                               TagType::k\#\#element\_tag\_type\#\#Array>() \{\}       \(\backslash\)}
+\DoxyCodeLine{  \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__Tags_gafb2c2fcd672cb27a07dc9165eac7a809}\label{group__Tags_gafb2c2fcd672cb27a07dc9165eac7a809}} 
+\index{Tags@{Tags}!DECLARE\_TAG\_META\_CLASS@{DECLARE\_TAG\_META\_CLASS}}
+\index{DECLARE\_TAG\_META\_CLASS@{DECLARE\_TAG\_META\_CLASS}!Tags@{Tags}}
+\doxysubsubsection{\texorpdfstring{DECLARE\_TAG\_META\_CLASS}{DECLARE\_TAG\_META\_CLASS}}
+{\footnotesize\ttfamily \#define DECLARE\+\_\+\+TAG\+\_\+\+META\+\_\+\+CLASS(\begin{DoxyParamCaption}\item[{}]{raw\+\_\+type,  }\item[{}]{tag\+\_\+type }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  \textcolor{keyword}{class }tag\_type : \textcolor{keyword}{public} \_\_TagMetaType\_\_<raw\_type, TagType::k\#\#tag\_type> \{    \(\backslash\)}
+\DoxyCodeLine{   public:                                                                     \(\backslash\)}
+\DoxyCodeLine{    inline tag\_type() : \_\_TagMetaType\_\_<raw\_type, \mbox{\hyperlink{group__Tags_ga88e0f89c109ed5d0d80840a3d53b8fd5}{TagType}}::k\#\#tag\_type>() \{\}   \(\backslash\)}
+\DoxyCodeLine{    explicit \textcolor{keyword}{inline} tag\_type(\textcolor{keyword}{const} raw\_type\& value)                            \(\backslash\)}
+\DoxyCodeLine{        : \_\_TagMetaType\_\_<raw\_type, TagType::k\#\#tag\_type>(value) \{\}            \(\backslash\)}
+\DoxyCodeLine{  \}}
 
 \end{DoxyCode}
 

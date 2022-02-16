@@ -12,13 +12,18 @@
 \DoxyCodeLine{13 \textcolor{preprocessor}{\#define DECLARE\_TAG\_META\_ARRAY\_CLASS(raw\_type, element\_tag\_type)               \(\backslash\)}}
 \DoxyCodeLine{14 \textcolor{preprocessor}{  class element\_tag\_type\#\#Array                                                \(\backslash\)}}
 \DoxyCodeLine{15 \textcolor{preprocessor}{      : public \_\_TagMetaArrayType\_\_<raw\_type,                                  \(\backslash\)}}
-\DoxyCodeLine{16 \textcolor{preprocessor}{                                    TagType::k\#\#element\_tag\_type\#\#Array> \{\}}}
-\DoxyCodeLine{17 }
-\DoxyCodeLine{21 DECLARE\_TAG\_META\_ARRAY\_CLASS(int8\_t, \mbox{\hyperlink{classnbtcc_1_1TagByte}{TagByte}});}
+\DoxyCodeLine{16 \textcolor{preprocessor}{                                    TagType::k\#\#element\_tag\_type\#\#Array> \{     \(\backslash\)}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{   public:                                                                     \(\backslash\)}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{    inline element\_tag\_type\#\#Array()                                           \(\backslash\)}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{        : \_\_TagMetaArrayType\_\_<raw\_type,                                       \(\backslash\)}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{                               TagType::k\#\#element\_tag\_type\#\#Array>() \{\}       \(\backslash\)}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{  \}}}
 \DoxyCodeLine{22 }
-\DoxyCodeLine{26 DECLARE\_TAG\_META\_ARRAY\_CLASS(int32\_t, \mbox{\hyperlink{classnbtcc_1_1TagInt}{TagInt}});}
-\DoxyCodeLine{30 \}  \textcolor{comment}{// namespace nbtcc}}
-\DoxyCodeLine{31 }
-\DoxyCodeLine{32 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// INCLUDE\_TAGS\_META\_ARRAY\_TAGS\_H\_}}
+\DoxyCodeLine{26 DECLARE\_TAG\_META\_ARRAY\_CLASS(int8\_t, \mbox{\hyperlink{classnbtcc_1_1TagByte}{TagByte}});}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{31 DECLARE\_TAG\_META\_ARRAY\_CLASS(int32\_t, \mbox{\hyperlink{classnbtcc_1_1TagInt}{TagInt}});}
+\DoxyCodeLine{35 \}  \textcolor{comment}{// namespace nbtcc}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// INCLUDE\_TAGS\_META\_ARRAY\_TAGS\_H\_}}
 
 \end{DoxyCode}

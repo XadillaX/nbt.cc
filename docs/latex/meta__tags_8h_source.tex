@@ -10,18 +10,23 @@
 \DoxyCodeLine{6 }
 \DoxyCodeLine{7 \textcolor{keyword}{namespace }nbtcc \{}
 \DoxyCodeLine{13 \textcolor{preprocessor}{\#define DECLARE\_TAG\_META\_CLASS(raw\_type, tag\_type)                             \(\backslash\)}}
-\DoxyCodeLine{14 \textcolor{preprocessor}{  class tag\_type : public \_\_TagMetaType\_\_<raw\_type, TagType::k\#\#tag\_type> \{\}}}
-\DoxyCodeLine{15 }
-\DoxyCodeLine{19 DECLARE\_TAG\_META\_CLASS(int8\_t, \mbox{\hyperlink{classnbtcc_1_1TagByte}{TagByte}});}
-\DoxyCodeLine{23 DECLARE\_TAG\_META\_CLASS(int16\_t, \mbox{\hyperlink{classnbtcc_1_1TagShort}{TagShort}});}
-\DoxyCodeLine{27 DECLARE\_TAG\_META\_CLASS(int32\_t, \mbox{\hyperlink{classnbtcc_1_1TagInt}{TagInt}});}
-\DoxyCodeLine{31 DECLARE\_TAG\_META\_CLASS(int64\_t, \mbox{\hyperlink{classnbtcc_1_1TagLong}{TagLong}});}
-\DoxyCodeLine{35 DECLARE\_TAG\_META\_CLASS(\textcolor{keywordtype}{float}, \mbox{\hyperlink{classnbtcc_1_1TagFloat}{TagFloat}});}
-\DoxyCodeLine{39 DECLARE\_TAG\_META\_CLASS(\textcolor{keywordtype}{double}, \mbox{\hyperlink{classnbtcc_1_1TagDouble}{TagDouble}});}
-\DoxyCodeLine{40 }
-\DoxyCodeLine{41 \textcolor{preprocessor}{\#undef DECLARE\_TAG\_META\_CLASS}}
-\DoxyCodeLine{45 \}  \textcolor{comment}{// namespace nbtcc}}
-\DoxyCodeLine{46 }
-\DoxyCodeLine{47 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// INCLUDE\_TAGS\_META\_TAGS\_H\_}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{  class tag\_type : public \_\_TagMetaType\_\_<raw\_type, TagType::k\#\#tag\_type> \{    \(\backslash\)}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{   public:                                                                     \(\backslash\)}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{    inline tag\_type() : \_\_TagMetaType\_\_<raw\_type, TagType::k\#\#tag\_type>() \{\}   \(\backslash\)}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{    explicit inline tag\_type(const raw\_type\& value)                            \(\backslash\)}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{        : \_\_TagMetaType\_\_<raw\_type, TagType::k\#\#tag\_type>(value) \{\}            \(\backslash\)}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{  \}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{24 DECLARE\_TAG\_META\_CLASS(int8\_t, \mbox{\hyperlink{classnbtcc_1_1TagByte}{TagByte}});}
+\DoxyCodeLine{28 DECLARE\_TAG\_META\_CLASS(int16\_t, \mbox{\hyperlink{classnbtcc_1_1TagShort}{TagShort}});}
+\DoxyCodeLine{32 DECLARE\_TAG\_META\_CLASS(int32\_t, \mbox{\hyperlink{classnbtcc_1_1TagInt}{TagInt}});}
+\DoxyCodeLine{36 DECLARE\_TAG\_META\_CLASS(int64\_t, \mbox{\hyperlink{classnbtcc_1_1TagLong}{TagLong}});}
+\DoxyCodeLine{40 DECLARE\_TAG\_META\_CLASS(\textcolor{keywordtype}{float}, \mbox{\hyperlink{classnbtcc_1_1TagFloat}{TagFloat}});}
+\DoxyCodeLine{44 DECLARE\_TAG\_META\_CLASS(\textcolor{keywordtype}{double}, \mbox{\hyperlink{classnbtcc_1_1TagDouble}{TagDouble}});}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#undef DECLARE\_TAG\_META\_CLASS}}
+\DoxyCodeLine{50 \}  \textcolor{comment}{// namespace nbtcc}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// INCLUDE\_TAGS\_META\_TAGS\_H\_}}
 
 \end{DoxyCode}
